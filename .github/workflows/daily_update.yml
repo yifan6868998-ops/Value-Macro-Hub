@@ -1,0 +1,39 @@
+name: Daily Macro & Value Data Update
+
+on:
+  schedule:
+    # 每天美东时间傍晚与早晨各自动更新一次
+    - cron: '30 21 * * 1-5'
+    - cron: '30 12 * * 1-5'
+  workflow_dispatch: # 允许你在网页上随时手动点击立即更新
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance
+
+      - name: Fetch latest market & macro data
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_data.py
+
+      - name: Commit and push updated data.json
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Auto update daily market & macro data"
+          git push
