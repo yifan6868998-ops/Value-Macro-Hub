@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Value & Macro Hub | 全球宏观与价值投资决策中枢</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#3b82f6', 600: '#2563eb' }
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // 初始化主题：优先读取本地偏好，否则自动跟随系统深浅色
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    initTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.classList.toggle('dark', e.matches);
+      }
+    });
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-200 font-sans">
+
+  <!-- 顶部导航与全局水温条 -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🧭</span>
+        <div>
+          <h1 id="ui-title" class="font-bold text-lg tracking-tight">全球宏观与价值投资决策中枢</h1>
+          <p id="ui-updated" class="text-xs text-slate-500 dark:text-slate-400">数据更新于: 加载中...</p>
+        </div>
+      </div>
+
+      <!-- 语言与主题控制栏 -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleLang()" id="lang-btn" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          🌐 EN / 中文
+        </button>
+        <button onclick="cycleTheme()" id="theme-btn" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          🌓 自动/深浅
+        </button>
+      </div>
+    </div>
+
+    <!-- 全球定价锚滚动条 -->
+    <div class="bg-slate-100/80 dark:bg-slate-900/60 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div id="global-tickers" class="max-w-7xl mx-auto px-4 py-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-xs">
+        <!-- JS 动态渲染 -->
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+
+    <!-- 模块 1：AI 全局因果推演与决策结论 -->
+    <section>
+      <div class="flex items-center justify-between mb-3">
+        <h2 id="sec-ai-title" class="text-lg font-bold flex items-center gap-2">
+          <span>🤖</span> <span>今日宏观因果推演与大概率方向 (What & Why)</span>
+        </h2>
+        <span id="sec-ai-sub" class="text-xs text-slate-500 dark:text-slate-400">点击卡片下方按钮可随时调取底层原始数据</span>
+      </div>
+      <div id="ai-deductions-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- JS 动态渲染 -->
+      </div>
+    </section>
+
+    <!-- 模块 2：四大市场流动性预测 & 股债性价比 (ERP) -->
+    <section>
+      <h2 id="sec-liq-title" class="text-lg font-bold mb-3 flex items-center gap-2">
+        <span>💧</span> <span>跨市场流动性预测与股债性价比 (ERP 水位)</span>
+      </h2>
+      <div id="liquidity-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- JS 动态渲染 -->
+      </div>
+    </section>
+
+    <!-- 模块 3：债 · 油 · 金 跨资产定价锚 -->
+    <section>
+      <h2 id="sec-macro-title" class="text-lg font-bold mb-3 flex items-center gap-2">
+        <span>⚖️</span> <span>债券 · 原油 · 黄金 宏观避险与通胀监控</span>
+      </h2>
+      <div id="macro-assets-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- JS 动态渲染 -->
+      </div>
+    </section>
+
+    <!-- 模块 4：四大市场深度价值看板 (CA / US / CN / HK) -->
+    <section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
+        <div>
+          <h2 id="sec-market-title" class="text-lg font-bold">📊 四大市场核心 ETF 估值与低估错杀选股池</h2>
+          <p id="sec-market-sub" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">按价值投资安全边际自动筛选（低PE / 高股息 / 历史低分位）</p>
+        </div>
+        <div class="flex flex-wrap gap-2" id="market-tabs">
+          <button onclick="switchMarket('CA')" data-market="CA" class="market-tab px-4 py-2 rounded-xl text-sm font-semibold transition">🇨🇦 加拿大 (CA)</button>
+          <button onclick="switchMarket('US')" data-market="US" class="market-tab px-4 py-2 rounded-xl text-sm font-semibold transition">🇺🇸 美股 (US)</button>
+          <button onclick="switchMarket('CN')" data-market="CN" class="market-tab px-4 py-2 rounded-xl text-sm font-semibold transition">🇨🇳 A股 (CN)</button>
+          <button onclick="switchMarket('HK')" data-market="HK" class="market-tab px-4 py-2 rounded-xl text-sm font-semibold transition">🇭🇰 港股 (HK)</button>
+        </div>
+      </div>
+
+      <!-- 核心 ETF 估值表 -->
+      <div class="mb-6">
+        <h3 id="sub-etf-title" class="text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">1. 核心宽基与红利 ETF 估值水位</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                <th class="py-2.5 px-3" id="th-code">代码</th>
+                <th class="py-2.5 px-3" id="th-name">名称</th>
+                <th class="py-2.5 px-3" id="th-price">最新价</th>
+                <th class="py-2.5 px-3" id="th-pe">PE (TTM)</th>
+                <th class="py-2.5 px-3" id="th-pct">5年估值分位</th>
+                <th class="py-2.5 px-3" id="th-div">股息率</th>
+                <th class="py-2.5 px-3" id="th-act">价值策略信号</th>
+              </tr>
+            </thead>
+            <tbody id="etf-table-body" class="divide-y divide-slate-200 dark:divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 低估/错杀个股筛选器 -->
+      <div>
+        <h3 id="sub-screen-title" class="text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">2. 每日自动筛选：低估值 / 高股息 / 错杀好公司观察池</h3>
+        <div id="screener-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- 模块 5：全球宏观与财报日历 -->
+    <section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <h2 id="sec-cal-title" class="text-lg font-bold flex items-center gap-2">
+          <span>📅</span> <span>关键宏观数据发布与持仓财报日历</span>
+        </h2>
+        <div class="flex flex-wrap gap-1.5 text-xs" id="cal-filters">
+          <button onclick="filterCalendar('ALL')" data-cal="ALL" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">全部 (All)</button>
+          <button onclick="filterCalendar('CA')" data-cal="CA" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">🇨🇦 CA</button>
+          <button onclick="filterCalendar('US')" data-cal="US" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">🇺🇸 US</button>
+          <button onclick="filterCalendar('CN')" data-cal="CN" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">🇨🇳 CN</button>
+          <button onclick="filterCalendar('HK')" data-cal="HK" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">🇭🇰 HK</button>
+        </div>
+      </div>
+      <div id="calendar-list" class="divide-y divide-slate-200 dark:divide-slate-800 text-sm"></div>
+    </section>
+
+  </main>
+
+  <footer class="max-w-7xl mx-auto px-4 py-8 text-center text-xs text-slate-400 dark:text-slate-600">
+    Powered by Cloudflare Pages & GitHub Actions · 100% Free Automated Value Investing System
+  </footer>
+
+  <script>
+    let appData = null;
+    let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+    let currentMarket = 'CA';
+    let currentCalFilter = 'ALL';
+
+    const i18n = {
+      zh: {
+        title: '全球宏观与价值投资决策中枢',
+        updated: '数据自动更新于: ',
+        aiTitle: '今日宏观因果推演与大概率方向 (What & Why)',
+        aiSub: '默认展示核心推演结论，点击底部按钮可随时展开底层原始数据',
+        eventLabel: '📌 核心触发事件：',
+        logicLabel: '🧠 因果传导逻辑：',
+        outcomeLabel: '🎯 大概率走势与策略：',
+        drawerBtn: '📊 调取/收起底层支撑数据',
+        liqTitle: '跨市场流动性预测与股债性价比 (ERP 水位)',
+        liqScore: '流动性宽松指数',
+        macroTitle: '债券 · 原油 · 黄金 宏观避险与通胀监控',
+        marketTitle: '📊 四大市场核心 ETF 估值与低估错杀选股池',
+        marketSub: '按价值投资安全边际自动筛选（低PE / 高股息 / 历史低分位）',
+        etfSub: '1. 核心宽基与红利 ETF 估值水位',
+        screenSub: '2. 每日自动筛选：低估值 / 高股息 / 错杀好公司观察池',
+        thCode: '代码', thName: '名称', thPrice: '最新价', thPe: 'PE (TTM)', thPct: '5年估值分位', thDiv: '股息率', thAct: '价值策略信号',
+        calTitle: '关键宏观数据发布与持仓财报日历',
+        typeMacro: '宏观数据/央行', typeEarnings: '公司财报/分红',
+        tabs: { CA: '🇨🇦 加拿大', US: '🇺🇸 美股', CN: '🇨🇳 A股', HK: '🇭🇰 港股' }
+      },
+      en: {
+        title: 'Global Macro & Value Investing Hub',
+        updated: 'Last Automated Update: ',
+        aiTitle: 'Daily Macro Causal Deduction & High-Prob Outlook',
+        aiSub: 'Executive summary shown by default; click below to inspect raw metrics',
+        eventLabel: '📌 Trigger Event: ',
+        logicLabel: '🧠 Causal Logic Chain: ',
+        outcomeLabel: '🎯 High-Probability Outcome: ',
+        drawerBtn: '📊 Inspect / Hide Underlying Data',
+        liqTitle: 'Cross-Market Liquidity Forecast & Equity Risk Premium (ERP)',
+        liqScore: 'Liquidity Index',
+        macroTitle: 'Bonds · Crude Oil · Gold Macro & Inflation Anchors',
+        marketTitle: '📊 Core ETF Valuations & Deep Value Stock Screener',
+        marketSub: 'Automated filtering by Margin of Safety (Low PE / High Yield / Low Percentile)',
+        etfSub: '1. Core Broad & Dividend ETF Valuation Percentiles',
+        screenSub: '2. Automated Value Screener: Oversold & High-Yield Compounders',
+        thCode: 'Ticker', thName: 'Name', thPrice: 'Price', thPe: 'PE (TTM)', thPct: '5Y Percentile', thDiv: 'Div Yield', thAct: 'Value Signal',
+        calTitle: 'Macro Releases & Holdings Earnings Calendar',
+        typeMacro: 'Macro / Central Bank', typeEarnings: 'Earnings / Dividend',
+        tabs: { CA: '🇨🇦 Canada', US: '🇺🇸 US Market', CN: '🇨🇳 China A', HK: '🇭🇰 Hong Kong' }
+      }
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'zh' ? 'en' : 'zh';
+      localStorage.setItem('lang', currentLang);
+      renderAll();
+    }
+
+    function cycleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    function toggleDrawer(id) {
+      const el = document.getElementById('drawer-' + id);
+      el.classList.toggle('hidden');
+    }
+
+    function switchMarket(m) {
+      currentMarket = m;
+      renderMarkets();
+    }
+
+    function filterCalendar(f) {
+      currentCalFilter = f;
+      renderCalendar();
+    }
+
+    function renderAll() {
+      if (!appData) return;
+      const t = i18n[currentLang];
+      document.getElementById('ui-title').textContent = t.title;
+      document.getElementById('ui-updated').textContent = t.updated + appData.last_updated;
+      document.getElementById('sec-ai-title').innerHTML = `<span>🤖</span><span>${t.aiTitle}</span>`;
+      document.getElementById('sec-ai-sub').textContent = t.aiSub;
+      document.getElementById('sec-liq-title').innerHTML = `<span>💧</span><span>${t.liqTitle}</span>`;
+      document.getElementById('sec-macro-title').innerHTML = `<span>⚖️</span><span>${t.macroTitle}</span>`;
+      document.getElementById('sec-market-title').textContent = t.marketTitle;
+      document.getElementById('sec-market-sub').textContent = t.marketSub;
+      document.getElementById('sub-etf-title').textContent = t.etfSub;
+      document.getElementById('sub-screen-title').textContent = t.screenSub;
+      document.getElementById('th-code').textContent = t.thCode;
+      document.getElementById('th-name').textContent = t.thName;
+      document.getElementById('th-price').textContent = t.thPrice;
+      document.getElementById('th-pe').textContent = t.thPe;
+      document.getElementById('th-pct').textContent = t.thPct;
+      document.getElementById('th-div').textContent = t.thDiv;
+      document.getElementById('th-act').textContent = t.thAct;
+      document.getElementById('sec-cal-title').innerHTML = `<span>📅</span><span>${t.calTitle}</span>`;
+
+      // 渲染顶部定价锚
+      document.getElementById('global-tickers').innerHTML = appData.global_tickers.map(item => `
+        <div class="flex items-center justify-between bg-white dark:bg-slate-800/90 px-3 py-1.5 rounded-lg border border-slate-200/80 dark:border-slate-700/80">
+          <span class="text-slate-500 dark:text-slate-400 font-medium">${currentLang === 'zh' ? item.name_zh : item.name_en}</span>
+          <div class="font-bold">${item.value} <span class="text-[11px] font-normal text-slate-400">${item.change}</span></div>
+        </div>
+      `).join('');
+
+      // 渲染 AI 因果推演卡
+      document.getElementById('ai-deductions-grid').innerHTML = appData.ai_deductions.map(d => `
+        <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">
+              ${currentLang === 'zh' ? d.tag_zh : d.tag_en}
+            </span>
+            <p class="text-sm"><strong class="text-slate-700 dark:text-slate-200">${t.eventLabel}</strong>${currentLang === 'zh' ? d.event_zh : d.event_en}</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+              <strong class="text-slate-800 dark:text-slate-100">${t.logicLabel}</strong>${currentLang === 'zh' ? d.logic_zh : d.logic_en}
+            </p>
+            <p class="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+              <strong>${t.outcomeLabel}</strong>${currentLang === 'zh' ? d.outcome_zh : d.outcome_en}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <button onclick="toggleDrawer('${d.id}')" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+              ${t.drawerBtn}
+            </button>
+            <div id="drawer-${d.id}" class="hidden mt-2 p-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
+              ${currentLang === 'zh' ? d.raw_data_zh : d.raw_data_en}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // 渲染流动性预测条
+      document.getElementById('liquidity-grid').innerHTML = appData.liquidity_bar.map(l => `
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-sm">${currentLang === 'zh' ? l.name_zh : l.name_en}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">${l.score} / 100</span>
+          </div>
+          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden mb-2">
+            <div class="bg-blue-600 dark:bg-blue-500 h-full rounded-full" style="width: ${l.score}%"></div>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+            <span>${currentLang === 'zh' ? l.state_zh : l.state_en}</span>
+            <span class="font-semibold text-slate-800 dark:text-slate-200">${currentLang === 'zh' ? l.erp_zh : l.erp_en}</span>
+          </div>
+        </div>
+      `).join('');
+
+      // 渲染债油金
+      const ma = appData.macro_assets;
+      document.getElementById('macro-assets-grid').innerHTML = ['bonds', 'oil', 'gold'].map(key => {
+        const block = ma[key];
+        return `
+          <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
+            <h3 class="font-bold text-sm mb-3 pb-2 border-b border-slate-100 dark:border-slate-800">
+              ${currentLang === 'zh' ? block.title_zh : block.title_en}
+            </h3>
+            <div class="space-y-2 text-xs">
+              ${block.metrics.map(m => `
+                <div class="flex justify-between py-1">
+                  <span class="text-slate-500 dark:text-slate-400">${currentLang === 'zh' ? m.label_zh : m.label_en}</span>
+                  <span class="font-semibold">${m.val}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      renderMarkets();
+      renderCalendar();
+    }
+
+    function renderMarkets() {
+      const t = i18n[currentLang];
+      document.querySelectorAll('.market-tab').forEach(btn => {
+        const m = btn.getAttribute('data-market');
+        btn.textContent = t.tabs[m];
+        if (m === currentMarket) {
+          btn.className = 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white shadow-sm';
+        } else {
+          btn.className = 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700';
+        }
+      });
+
+      const mData = appData.markets[currentMarket];
+      document.getElementById('etf-table-body').innerHTML = mData.etfs.map(e => `
+        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+          <td class="py-3 px-3 font-mono font-bold text-blue-600 dark:text-blue-400">${e.code}</td>
+          <td class="py-3 px-3 font-medium">${currentLang === 'zh' ? e.name_zh : e.name_en}</td>
+          <td class="py-3 px-3 font-semibold">${e.price}</td>
+          <td class="py-3 px-3">${e.pe}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800">${e.percentile}</span>
+          </td>
+          <td class="py-3 px-3 font-semibold text-emerald-600 dark:text-emerald-400">${e.div}</td>
+          <td class="py-3 px-3 text-xs font-semibold">${currentLang === 'zh' ? e.action_zh : e.action_en}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('screener-grid').innerHTML = mData.screener.map(s => `
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono font-bold text-blue-600 dark:text-blue-400">${s.code}</span>
+              <span class="font-bold text-sm">${s.price}</span>
+            </div>
+            <div class="font-semibold text-sm mb-2">${currentLang === 'zh' ? s.name_zh : s.name_en}</div>
+            <div class="flex gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3">
+              <span>PE: <strong class="text-slate-700 dark:text-slate-200">${s.pe}</strong></span>
+              <span>PB: <strong class="text-slate-700 dark:text-slate-200">${s.pb}</strong></span>
+              <span>Div: <strong class="text-emerald-600 dark:text-emerald-400">${s.div}</strong></span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700 pt-2">
+            💡 ${currentLang === 'zh' ? s.note_zh : s.note_en}
+          </p>
+        </div>
+      `).join('');
+    }
+
+    function renderCalendar() {
+      const t = i18n[currentLang];
+      document.querySelectorAll('.cal-btn').forEach(btn => {
+        const c = btn.getAttribute('data-cal');
+        if (c === currentCalFilter) {
+          btn.className = 'cal-btn px-3 py-1.5 rounded-lg font-semibold bg-blue-600 text-white border border-blue-600';
+        } else {
+          btn.className = 'cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800';
+        }
+      });
+
+      const items = appData.calendar.filter(i => currentCalFilter === 'ALL' || i.market === currentCalFilter);
+      document.getElementById('calendar-list').innerHTML = items.map(item => `
+        <div class="py-3 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800">${item.date}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">${item.market}</span>
+            <span class="font-medium">${currentLang === 'zh' ? item.title_zh : item.title_en}</span>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full ${item.type === 'macro' ? 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300' : 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'}">
+            ${item.type === 'macro' ? t.typeMacro : t.typeEarnings}
+          </span>
+        </div>
+      `).join('');
+    }
+
+    fetch('./data.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        appData = data;
+        renderAll();
+      });
+  </script>
+</body>
+</html>
