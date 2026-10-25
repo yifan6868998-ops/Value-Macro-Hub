@@ -1,11 +1,51 @@
 {
-  "last_updated": "2026-10-25 14:30 UTC (Multi-Source Verified)",
+  "last_updated": "2026-10-25 15:22 UTC (Verified: Yahoo / Stock Analysis / FRED)",
   "global_tickers": [
-    { "id": "us10y", "name_zh": "10Y 美债收益率", "name_en": "US 10Y Yield", "value": "4.24%", "change": "+0.03%", "source_name": "Yahoo Finance (^TNX)", "source_url": "https://finance.yahoo.com/quote/%5ETNX/" },
-    { "id": "spread", "name_zh": "10Y-3M 美债利差", "name_en": "10Y-3M Spread", "value": "-0.38%", "change": "FRED Official", "source_name": "FRED St. Louis Fed", "source_url": "https://fred.stlouisfed.org/series/T10Y3M" },
-    { "id": "vix", "name_zh": "VIX 恐慌指数", "name_en": "VIX Index", "value": "20.33", "change": "+6.50%", "source_name": "Yahoo Finance (^VIX)", "source_url": "https://finance.yahoo.com/quote/%5EVIX/" },
-    { "id": "cadusd", "name_zh": "加元/美元", "name_en": "CAD/USD", "value": "0.7198", "change": "-0.21%", "source_name": "Yahoo Finance (CADUSD=X)", "source_url": "https://finance.yahoo.com/quote/CADUSD%3DX/" },
-    { "id": "usdcnh", "name_zh": "美元/离岸人民币", "name_en": "USD/CNH", "value": "7.1320", "change": "+0.11%", "source_name": "Yahoo Finance (CNY=X)", "source_url": "https://finance.yahoo.com/quote/CNY%3DX/" }
+    {
+      "id": "us10y",
+      "name_zh": "10Y 美债收益率",
+      "name_en": "US 10Y Yield",
+      "value": "4.99%",
+      "change": "+0.71%",
+      "source_name": "Yahoo Finance (^TNX)",
+      "source_url": "https://finance.yahoo.com/quote/%5ETNX/"
+    },
+    {
+      "id": "spread",
+      "name_zh": "10Y-3M 美债利差",
+      "name_en": "10Y-3M Spread",
+      "value": "+0.96%",
+      "change": "FRED Official",
+      "source_name": "FRED St. Louis Fed",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y3M"
+    },
+    {
+      "id": "vix",
+      "name_zh": "VIX 恐慌指数",
+      "name_en": "VIX Index",
+      "value": "19.45",
+      "change": "+2.21%",
+      "source_name": "Yahoo Finance (^VIX)",
+      "source_url": "https://finance.yahoo.com/quote/%5EVIX/"
+    },
+    {
+      "id": "cadusd",
+      "name_zh": "加元/美元",
+      "name_en": "CAD/USD",
+      "value": "0.7142",
+      "change": "+0.00%",
+      "source_name": "Yahoo Finance (CADUSD=X)",
+      "source_url": "https://finance.yahoo.com/quote/CADUSD%3DX/"
+    },
+    {
+      "id": "usdcnh",
+      "name_zh": "美元/离岸人民币",
+      "name_en": "USD/CNH",
+      "value": "6.6697",
+      "change": "-0.12%",
+      "source_name": "Yahoo Finance (CNY=X)",
+      "source_url": "https://finance.yahoo.com/quote/CNY%3DX/"
+    }
   ],
   "ai_deductions": [
     {
@@ -46,21 +86,27 @@
   "liquidity_bar": [
     {
       "market": "US",
-      "name_zh": "🇺🇸 美国市场", "name_en": "🇺🇸 US Market",
+      "name_zh": "🇺🇸 美国市场",
+      "name_en": "🇺🇸 US Market",
       "score": 52,
-      "state_zh": "流动性中性偏紧", "state_en": "Liquidity Neutral-Tight",
-      "erp_zh": "ERP: -0.45% (股票极贵)", "erp_en": "ERP: -0.45% (Equities Rich)",
-      "formula_zh": "推导公式: 标普500盈利收益率 (1/PE = 3.79%) - 10Y美债 (4.24%) = -0.45%。股票风险补偿为负，安全边际低。",
-      "formula_en": "Formula: S&P Earnings Yield (1/PE = 3.79%) - US 10Y (4.24%) = -0.45%. Negative risk premium implies low margin of safety.",
+      "state_zh": "流动性中性偏紧",
+      "state_en": "Liquidity Neutral-Tight",
+      "erp_zh": "ERP: -0.84% (股票偏贵)",
+      "erp_en": "ERP: -0.84% (Equities Rich)",
+      "formula_zh": "推导公式: 标普盈利收益率 (1/24.1 = 4.14%) - 10Y美债 (4.99%) = -0.84%。",
+      "formula_en": "Formula: S&P Earnings Yield (1/24.1 = 4.14%) - US 10Y (4.99%) = -0.84%.",
       "source_name": "FRED & S&P Global",
       "source_url": "https://fred.stlouisfed.org/series/DGS10"
     },
     {
       "market": "CA",
-      "name_zh": "🇨🇦 加拿大市场", "name_en": "🇨🇦 Canada Market",
+      "name_zh": "🇨🇦 加拿大市场",
+      "name_en": "🇨🇦 Canada Market",
       "score": 74,
-      "state_zh": "连续降息周期 · 偏松", "state_en": "Rate-Cut Cycle · Easing",
-      "erp_zh": "ERP: +2.75% (估值合理)", "erp_en": "ERP: +2.75% (Fair Value)",
+      "state_zh": "连续降息周期 · 偏松",
+      "state_en": "Rate-Cut Cycle · Easing",
+      "erp_zh": "ERP: +2.75% (估值合理)",
+      "erp_en": "ERP: +2.75% (Fair Value)",
       "formula_zh": "推导公式: TSX盈利收益率 (1/16.2 = 6.17%) - 加拿大10Y国债 (3.42%) = +2.75%。央行已连续降息，高息股吸引力凸显。",
       "formula_en": "Formula: TSX Earnings Yield (1/16.2 = 6.17%) - CA 10Y Bond (3.42%) = +2.75%. BoC rate cuts boost dividend appeal.",
       "source_name": "Bank of Canada Official",
@@ -68,10 +114,13 @@
     },
     {
       "market": "CN",
-      "name_zh": "🇨🇳 A股市场", "name_en": "🇨🇳 A-Share Market",
+      "name_zh": "🇨🇳 A股市场",
+      "name_en": "🇨🇳 A-Share Market",
       "score": 80,
-      "state_zh": "货币与互换工具宽松", "state_en": "Policy & Liquidity Easing",
-      "erp_zh": "ERP: +6.08% (极高安全边际 ⭐)", "erp_en": "ERP: +6.08% (Deep Value ⭐)",
+      "state_zh": "货币与互换工具宽松",
+      "state_en": "Policy & Liquidity Easing",
+      "erp_zh": "ERP: +6.08% (极高安全边际 ⭐)",
+      "erp_en": "ERP: +6.08% (Deep Value ⭐)",
       "formula_zh": "推导公式: 沪深300盈利收益率 (1/12.2 = 8.20%) - 10Y中债 (2.12%) = +6.08%。超过+5.5%即为历史级底部配置区。",
       "formula_en": "Formula: CSI 300 Earnings Yield (1/12.2 = 8.20%) - CN 10Y (2.12%) = +6.08%. >5.5% signals historical bottom zone.",
       "source_name": "东方财富中美国债利差",
@@ -79,10 +128,13 @@
     },
     {
       "market": "HK",
-      "name_zh": "🇭🇰 港股市场", "name_en": "🇭🇰 HK Market",
+      "name_zh": "🇭🇰 港股市场",
+      "name_en": "🇭🇰 HK Market",
       "score": 68,
-      "state_zh": "南向强流入 / 美元锚偏紧", "state_en": "Strong Southbound Inflow",
-      "erp_zh": "ERP: +6.16% (全球估值洼地 ⭐)", "erp_en": "ERP: +6.16% (Global Value Pocket ⭐)",
+      "state_zh": "南向强流入 / 美元锚偏紧",
+      "state_en": "Strong Southbound Inflow",
+      "erp_zh": "ERP: +6.16% (全球估值洼地 ⭐)",
+      "erp_en": "ERP: +6.16% (Global Value Pocket ⭐)",
       "formula_zh": "推导公式: 恒指盈利收益率 (1/9.6 = 10.40%) - 10Y美债锚 (4.24%) = +6.16%。高股息垫完全覆盖海外利率波动。",
       "formula_en": "Formula: HSI Earnings Yield (1/9.6 = 10.40%) - US 10Y Anchor (4.24%) = +6.16%. High yield cushions rate volatility.",
       "source_name": "东方财富港股通资金流",
@@ -94,170 +146,454 @@
       "title_zh": "🛡️ 债券与利率定价锚 (Bonds)",
       "title_en": "🛡️ Bonds & Rate Anchors",
       "metrics": [
-        { "label_zh": "美债 10Y / 13W 收益率", "label_en": "US 10Y / 13W Yield", "val": "4.24% / 4.51%", "url": "https://finance.yahoo.com/quote/%5ETNX/" },
-        { "label_zh": "中债 10Y 国债收益率", "label_en": "CN 10Y Govt Yield", "val": "2.12%", "url": "https://data.eastmoney.com/cjsj/zmgzsyl.html" },
-        { "label_zh": "TLT (20年+长久期美债)", "label_en": "TLT (20Y+ Treasury ETF)", "val": "$92.41 (Yield 4.18%)", "url": "https://finance.yahoo.com/quote/TLT/" },
-        { "label_zh": "SGOV (0-3月现金等价短债)", "label_en": "SGOV (0-3M T-Bill ETF)", "val": "$100.42 (Yield 4.92%)", "url": "https://finance.yahoo.com/quote/SGOV/" }
+        {
+          "label_zh": "美债 10Y / 13W 收益率",
+          "label_en": "US 10Y / 13W Yield",
+          "val": "4.99% / 4.03%",
+          "url": "https://finance.yahoo.com/quote/%5ETNX/"
+        },
+        {
+          "label_zh": "中债 10Y 国债收益率",
+          "label_en": "CN 10Y Govt Yield",
+          "val": "2.12%",
+          "url": "https://data.eastmoney.com/cjsj/zmgzsyl.html"
+        },
+        {
+          "label_zh": "TLT (20年+长久期美债)",
+          "label_en": "TLT (20Y+ Treasury ETF)",
+          "val": "$81.34 (Yield 4.78%)",
+          "url": "https://finance.yahoo.com/quote/TLT/"
+        },
+        {
+          "label_zh": "SGOV (0-3月现金等价短债)",
+          "label_en": "SGOV (0-3M T-Bill ETF)",
+          "val": "$100.66 (Yield 3.64%)",
+          "url": "https://finance.yahoo.com/quote/SGOV/"
+        }
       ]
     },
     "oil": {
       "title_zh": "🛢️ 原油与传统能源锚 (Crude Oil)",
       "title_en": "🛢️ Crude Oil & Energy",
       "metrics": [
-        { "label_zh": "WTI 原油期货主力", "label_en": "WTI Crude Futures", "val": "$71.78 / bbl", "url": "https://finance.yahoo.com/quote/CL%3DF/" },
-        { "label_zh": "Brent 布伦特原油主力", "label_en": "Brent Crude Futures", "val": "$76.05 / bbl", "url": "https://finance.yahoo.com/quote/BZ%3DF/" },
-        { "label_zh": "XLE (美股能源巨头ETF)", "label_en": "XLE (US Energy ETF)", "val": "$89.62", "url": "https://finance.yahoo.com/quote/XLE/" },
-        { "label_zh": "XEG.TO (加拿大能源ETF)", "label_en": "XEG.TO (CA Energy ETF)", "val": "C$17.85", "url": "https://finance.yahoo.com/quote/XEG.TO/" }
+        {
+          "label_zh": "WTI 原油期货主力",
+          "label_en": "WTI Crude Futures",
+          "val": "$103.27 / bbl (+3.82%)",
+          "url": "https://finance.yahoo.com/quote/CL%3DF/"
+        },
+        {
+          "label_zh": "Brent 布伦特原油主力",
+          "label_en": "Brent Crude Futures",
+          "val": "$111.70 / bbl (-1.30%)",
+          "url": "https://finance.yahoo.com/quote/BZ%3DF/"
+        },
+        {
+          "label_zh": "XLE (美股能源巨头ETF)",
+          "label_en": "XLE (US Energy ETF)",
+          "val": "$69.33 (+2.60%)",
+          "url": "https://finance.yahoo.com/quote/XLE/"
+        },
+        {
+          "label_zh": "XEG.TO (加拿大能源ETF)",
+          "label_en": "XEG.TO (CA Energy ETF)",
+          "val": "C$31.41 (+2.05%)",
+          "url": "https://finance.yahoo.com/quote/XEG.TO/"
+        }
       ]
     },
     "gold": {
       "title_zh": "🪙 黄金与宏观危机比价 (Gold)",
       "title_en": "🪙 Gold & Crisis Ratios",
       "metrics": [
-        { "label_zh": "COMEX 黄金期货主力", "label_en": "COMEX Gold Futures", "val": "$2,736.4 / oz", "url": "https://finance.yahoo.com/quote/GC%3DF/" },
-        { "label_zh": "金油比 (Gold/Oil 危机指标)", "label_en": "Gold/Oil Ratio", "val": "38.1x (高于30均值预警)", "url": "https://finance.yahoo.com/quote/GC%3DF/" },
-        { "label_zh": "GLD (实物黄金ETF)", "label_en": "GLD (Physical Gold ETF)", "val": "$253.10", "url": "https://finance.yahoo.com/quote/GLD/" },
-        { "label_zh": "TIPS 10Y 实际利率锚", "label_en": "US 10Y Real Yield (TIPS)", "val": "1.92%", "url": "https://fred.stlouisfed.org/series/DFII10" }
+        {
+          "label_zh": "COMEX 黄金期货主力",
+          "label_en": "COMEX Gold Futures",
+          "val": "$4,007.9 / oz (-1.29%)",
+          "url": "https://finance.yahoo.com/quote/GC%3DF/"
+        },
+        {
+          "label_zh": "金油比 (Gold/Oil 危机指标)",
+          "label_en": "Gold/Oil Ratio",
+          "val": "38.8x (高于30均值预警)",
+          "url": "https://finance.yahoo.com/quote/GC%3DF/"
+        },
+        {
+          "label_zh": "GLD (实物黄金ETF)",
+          "label_en": "GLD (Physical Gold ETF)",
+          "val": "$366.61 (-0.65%)",
+          "url": "https://finance.yahoo.com/quote/GLD/"
+        },
+        {
+          "label_zh": "TIPS 10Y 实际利率锚",
+          "label_en": "US 10Y Real Yield (TIPS)",
+          "val": "1.92%",
+          "url": "https://fred.stlouisfed.org/series/DFII10"
+        }
       ]
     }
   },
   "markets": {
     "CA": {
       "etfs": [
-        { "code": "XIU.TO", "name_zh": "TSX 60 核心宽基 ETF", "name_en": "iShares S&P/TSX 60 ETF", "price": "C$36.85", "pe": "16.2x", "percentile": "52%", "div": "3.05%", "action_zh": "估值合理 / 底仓持有", "action_en": "Fair Value / Core Hold", "yahoo_url": "https://finance.yahoo.com/quote/XIU.TO/", "sa_url": "https://stockanalysis.com/quote/tsx/XIU/" },
-        { "code": "VDY.TO", "name_zh": "Vanguard 加拿大高股息 ETF", "name_en": "Vanguard FTSE CDN High Div", "price": "C$47.60", "pe": "13.8x", "percentile": "36%", "div": "4.42%", "action_zh": "降息周期受益 / 定投吸筹 ⭐", "action_en": "Rate-Cut Beneficiary / DCA ⭐", "yahoo_url": "https://finance.yahoo.com/quote/VDY.TO/", "sa_url": "https://stockanalysis.com/quote/tsx/VDY/" }
+        {
+          "code": "XIU.TO",
+          "name_zh": "TSX 60 核心宽基 ETF",
+          "name_en": "iShares S&P/TSX 60 ETF",
+          "price": "C$53.90 (-0.50%)",
+          "pe": "19.3x",
+          "percentile": "97%",
+          "div": "2.11%",
+          "action_zh": "估值合理 / 底仓持有",
+          "action_en": "Fair Value / Core Hold",
+          "yahoo_url": "https://finance.yahoo.com/quote/XIU.TO/",
+          "sa_url": "https://stockanalysis.com/quote/tsx/XIU/"
+        },
+        {
+          "code": "VDY.TO",
+          "name_zh": "Vanguard 加拿大高股息 ETF",
+          "name_en": "Vanguard FTSE CDN High Div",
+          "price": "C$78.10 (-0.18%)",
+          "pe": "17.5x",
+          "percentile": "99%",
+          "div": "3.02%",
+          "action_zh": "降息周期受益 / 定投吸筹 ⭐",
+          "action_en": "Rate-Cut Beneficiary / DCA ⭐",
+          "yahoo_url": "https://finance.yahoo.com/quote/VDY.TO/",
+          "sa_url": "https://stockanalysis.com/quote/tsx/VDY/"
+        }
       ],
       "screener": [
         {
-          "code": "CNQ.TO", "name_zh": "加拿大自然资源", "name_en": "Canadian Natural Resources",
-          "price": "C$47.20", "pe": "12.4x", "pe_pct": "28%", "peg": "1.05", "pb": "2.35x",
-          "div": "4.45%", "div_cagr": "+18.5%", "payout": "54%",
+          "code": "CNQ.TO",
+          "name_zh": "加拿大自然资源",
+          "name_en": "Canadian Natural Resources",
+          "price": "C$77.12 (+2.15%)",
+          "pe": "13.7x",
+          "pe_pct": "100%",
+          "peg": "3.42",
+          "pb": "3.41x",
+          "div": "3.96%",
+          "div_cagr": "+11.1%",
+          "payout": "43%",
           "moat_zh": "商业模式与护城河：北美最大油砂与重油生产商，油砂资产具备『零递减率』与40年超长寿命，无需像页岩油那样每年投入巨额资本开支维持产量，WTI盈亏平衡点低于35美元/桶。",
           "moat_en": "Moat & Model: Largest oil sands producer in North America. Long-life, low-decline reserves require minimal maintenance CapEx vs US shale; WTI breakeven <$35/bbl.",
           "quality_zh": "业绩与分红质量：连续24年上调股息（5年分红复合增速高达18.5%），派息率仅54%。由于净债务已降至目标线以下，公司承诺将100%自由现金流通过分红与回购返还股东。",
           "quality_en": "Earnings Quality: 24 consecutive years of dividend increases (18.5% 5Y CAGR), conservative 54% payout ratio. 100% of free cash flow returned to shareholders.",
           "underval_zh": "为何低估（安全边际）：受短期油价回落至70美元拖累，股价自高点回撤近15%，PE处于5年28%低分位，按当前70美元油价测算自由现金流收益率（FCF Yield）超9%。",
           "underval_en": "Why Undervalued: Pulled back ~15% on short-term oil softness; trades at 28th 5Y PE percentile with >9% FCF yield even at $70 WTI.",
-          "yahoo_url": "https://finance.yahoo.com/quote/CNQ.TO/", "sa_url": "https://stockanalysis.com/quote/tsx/CNQ/"
+          "yahoo_url": "https://finance.yahoo.com/quote/CNQ.TO/",
+          "sa_url": "https://stockanalysis.com/quote/tsx/CNQ/"
         },
         {
-          "code": "TD.TO", "name_zh": "道明银行", "name_en": "Toronto-Dominion Bank",
-          "price": "C$77.90", "pe": "10.1x", "pe_pct": "15%", "peg": "1.18", "pb": "1.28x",
-          "div": "5.24%", "div_cagr": "+6.8%", "payout": "52%",
+          "code": "TD.TO",
+          "name_zh": "道明银行",
+          "name_en": "Toronto-Dominion Bank",
+          "price": "C$174.47 (-0.38%)",
+          "pe": "18.7x",
+          "pe_pct": "99%",
+          "peg": "0.91",
+          "pb": "2.31x",
+          "div": "3.12%",
+          "div_cagr": "+11.2%",
+          "payout": "46%",
           "moat_zh": "商业模式与护城河：加拿大五大寡头银行之一，拥有加拿大本土最强的低成本零售存款基础，受严格监管壁垒保护。",
           "moat_en": "Moat & Model: Top-5 Canadian oligopoly bank with the strongest low-cost retail deposit franchise in Canada.",
           "quality_zh": "业绩与分红质量：经历美国反洗钱罚款一次性计提后，核心一级资本充足率（CET1）依然充裕，派息率维持在52%安全区间，连续百年派息未中断。",
           "quality_en": "Earnings Quality: Post-AML settlement clarity; strong CET1 capital ratio, safe 52% payout ratio, uninterrupted dividend record for over a century.",
           "underval_zh": "为何低估（安全边际）：利空落地后极度悲观情绪已完全计价（靴子落地），PE处于5年15%极低分位，超5.2%股息率处于历史高位，典型错杀反转标的。",
           "underval_en": "Why Undervalued: Regulatory overhang fully priced in; trading at 15th 5Y PE percentile with a historically high 5.24% dividend floor.",
-          "yahoo_url": "https://finance.yahoo.com/quote/TD.TO/", "sa_url": "https://stockanalysis.com/quote/tsx/TD/"
+          "yahoo_url": "https://finance.yahoo.com/quote/TD.TO/",
+          "sa_url": "https://stockanalysis.com/quote/tsx/TD/"
         }
       ]
     },
     "US": {
       "etfs": [
-        { "code": "VOO", "name_zh": "Vanguard 标普 500 ETF", "name_en": "Vanguard S&P 500 ETF", "price": "$533.80", "pe": "26.4x", "percentile": "89%", "div": "1.22%", "action_zh": "历史高位 / 仅底仓持有", "action_en": "High Percentile / Hold Core", "yahoo_url": "https://finance.yahoo.com/quote/VOO/", "sa_url": "https://stockanalysis.com/etf/voo/" },
-        { "code": "SCHD", "name_zh": "嘉信美国高股息质量 ETF", "name_en": "Schwab US Dividend Equity ETF", "price": "$28.75", "pe": "16.1x", "percentile": "41%", "div": "3.48%", "action_zh": "高ROE筛选 / 价值定投首选 ⭐", "action_en": "High-ROE Filter / Core DCA ⭐", "yahoo_url": "https://finance.yahoo.com/quote/SCHD/", "sa_url": "https://stockanalysis.com/etf/schd/" }
+        {
+          "code": "VOO",
+          "name_zh": "Vanguard 标普 500 ETF",
+          "name_en": "Vanguard S&P 500 ETF",
+          "price": "$698.58 (-0.53%)",
+          "pe": "24.1x",
+          "percentile": "95%",
+          "div": "1.31%",
+          "action_zh": "历史高位 / 仅底仓持有",
+          "action_en": "High Percentile / Hold Core",
+          "yahoo_url": "https://finance.yahoo.com/quote/VOO/",
+          "sa_url": "https://stockanalysis.com/etf/voo/"
+        },
+        {
+          "code": "SCHD",
+          "name_zh": "嘉信美国高股息质量 ETF",
+          "name_en": "Schwab US Dividend Equity ETF",
+          "price": "$35.27 (-0.37%)",
+          "pe": "19.7x",
+          "percentile": "99%",
+          "div": "3.73%",
+          "action_zh": "高ROE筛选 / 价值定投首选 ⭐",
+          "action_en": "High-ROE Filter / Core DCA ⭐",
+          "yahoo_url": "https://finance.yahoo.com/quote/SCHD/",
+          "sa_url": "https://stockanalysis.com/etf/schd/"
+        }
       ],
       "screener": [
         {
-          "code": "MRK", "name_zh": "默沙东制药", "name_en": "Merck & Co., Inc.",
-          "price": "$104.50", "pe": "14.2x", "pe_pct": "22%", "peg": "0.85", "pb": "5.80x",
-          "div": "2.95%", "div_cagr": "+7.2%", "payout": "42%",
+          "code": "MRK",
+          "name_zh": "默沙东制药",
+          "name_en": "Merck & Co., Inc.",
+          "price": "$145.27 (-1.34%)",
+          "pe": "115.3x",
+          "pe_pct": "89%",
+          "peg": "2.72",
+          "pb": "8.55x",
+          "div": "2.34%",
+          "div_cagr": "+5.4%",
+          "payout": "42%",
           "moat_zh": "商业模式与护城河：全球肿瘤免疫之王（Keytruda）与HPV疫苗（Gardasil）双核驱动，新药Winrevair（肺动脉高压）开启百亿级新增长曲线。",
           "moat_en": "Moat & Model: Global oncology leader (Keytruda) + Gardasil vaccine moat, with newly approved Winrevair opening a multi-billion growth leg.",
           "quality_zh": "业绩与分红质量：ROE超35%，自由现金流充沛，派息率仅42%，连续13年稳步提高分红。",
           "quality_en": "Earnings Quality: ROE >35%, massive FCF generation, conservative 42% payout ratio with 13 years of consecutive dividend hikes.",
           "underval_zh": "为何低估（安全边际）：因中国区疫苗阶段性去库存引发市场过度抛售，股价自高点回调超20%，PEG仅0.85（<1极度低估），远期PE仅11.5倍。",
           "underval_en": "Why Undervalued: Oversold by >20% on temporary China Gardasil destocking; trades at a 0.85 PEG ratio and ~11.5x forward earnings.",
-          "yahoo_url": "https://finance.yahoo.com/quote/MRK/", "sa_url": "https://stockanalysis.com/stocks/mrk/"
+          "yahoo_url": "https://finance.yahoo.com/quote/MRK/",
+          "sa_url": "https://stockanalysis.com/stocks/mrk/"
         },
         {
-          "code": "VZ", "name_zh": "威瑞森电信", "name_en": "Verizon Communications",
-          "price": "$41.80", "pe": "9.3x", "pe_pct": "18%", "peg": "1.35", "pb": "1.82x",
-          "div": "6.45%", "div_cagr": "+2.0%", "payout": "59%",
+          "code": "VZ",
+          "name_zh": "威瑞森电信",
+          "name_en": "Verizon Communications",
+          "price": "$44.66 (-1.19%)",
+          "pe": "11.6x",
+          "pe_pct": "76%",
+          "peg": "0.80",
+          "pb": "1.79x",
+          "div": "7.85%",
+          "div_cagr": "+8.0%",
+          "payout": "73%",
           "moat_zh": "商业模式与护城河：美国三大无线通信寡头之首，5G频谱与光纤网络资本开支高峰期已过，刚需订阅模式不受经济周期波动影响。",
           "moat_en": "Moat & Model: US telecom oligopoly leader; 5G C-band CapEx peak is behind it, recurring subscription cash flows immune to macro cycles.",
           "quality_zh": "业绩与分红质量：年度自由现金流接近190亿美元，派息率59%，完全覆盖高额分红并持续偿还债务，连续18年增加股息。",
           "quality_en": "Earnings Quality: ~$19B annual FCF easily covers dividends (59% payout ratio) while de-leveraging; 18 consecutive years of dividend growth.",
           "underval_zh": "为何低估（安全边际）：PE仅9.3倍（处于5年18%低分位），6.45%股息率远超美债收益率，在降息周期中具备极强的类债重估弹性。",
           "underval_en": "Why Undervalued: 9.3x PE (18th 5Y percentile) and 6.45% yield offer a massive spread over Treasuries with upside re-rating potential as rates fall.",
-          "yahoo_url": "https://finance.yahoo.com/quote/VZ/", "sa_url": "https://stockanalysis.com/stocks/vz/"
+          "yahoo_url": "https://finance.yahoo.com/quote/VZ/",
+          "sa_url": "https://stockanalysis.com/stocks/vz/"
         }
       ]
     },
     "CN": {
       "etfs": [
-        { "code": "510300.SS", "name_zh": "华泰柏瑞沪深 300 ETF", "name_en": "CSI 300 Index ETF", "price": "¥4.01", "pe": "12.2x", "percentile": "27%", "div": "2.95%", "action_zh": "高股债性价比 / 分批配置", "action_en": "High ERP / Accumulate", "yahoo_url": "https://finance.yahoo.com/quote/510300.SS/", "sa_url": "https://quote.eastmoney.com/sh510300.html" },
-        { "code": "512890.SS", "name_zh": "华泰柏瑞红利低波 ETF", "name_en": "CSI Low-Vol Dividend ETF", "price": "¥1.13", "pe": "7.3x", "percentile": "20%", "div": "5.35%", "action_zh": "险资底仓 / 强力定投 ⭐", "action_en": "Institutional Core / Strong DCA ⭐", "yahoo_url": "https://finance.yahoo.com/quote/512890.SS/", "sa_url": "https://quote.eastmoney.com/sh512890.html" }
+        {
+          "code": "510300.SS",
+          "name_zh": "华泰柏瑞沪深 300 ETF",
+          "name_en": "CSI 300 Index ETF",
+          "price": "¥4.18 (+1.73%)",
+          "pe": "12.2x",
+          "percentile": "55%",
+          "div": "5.05%",
+          "action_zh": "高股债性价比 / 分批配置",
+          "action_en": "High ERP / Accumulate",
+          "yahoo_url": "https://finance.yahoo.com/quote/510300.SS/",
+          "sa_url": "https://quote.eastmoney.com/sh510300.html"
+        },
+        {
+          "code": "512890.SS",
+          "name_zh": "华泰柏瑞红利低波 ETF",
+          "name_en": "CSI Low-Vol Dividend ETF",
+          "price": "¥1.20 (-0.08%)",
+          "pe": "7.3x",
+          "percentile": "91%",
+          "div": "5.35%",
+          "action_zh": "险资底仓 / 强力定投 ⭐",
+          "action_en": "Institutional Core / Strong DCA ⭐",
+          "yahoo_url": "https://finance.yahoo.com/quote/512890.SS/",
+          "sa_url": "https://quote.eastmoney.com/sh512890.html"
+        }
       ],
       "screener": [
         {
-          "code": "600900.SS", "name_zh": "长江电力", "name_en": "China Yangtze Power",
-          "price": "¥27.85", "pe": "18.8x", "pe_pct": "42%", "peg": "1.20", "pb": "3.05x",
-          "div": "3.65%", "div_cagr": "+6.2%", "payout": "70%",
+          "code": "600900.SS",
+          "name_zh": "长江电力",
+          "name_en": "China Yangtze Power",
+          "price": "¥29.45 (-1.24%)",
+          "pe": "19.9x",
+          "pe_pct": "97%",
+          "peg": "1.20",
+          "pb": "3.33x",
+          "div": "5.88%",
+          "div_cagr": "+6.2%",
+          "payout": "64%",
           "moat_zh": "商业模式与护城河：坐拥乌东德、白鹤滩、溪洛渡、向家坝、三峡、葛洲坝六座巨型梯级水电站，独家垄断且不可复制，发电边际成本极低。",
           "moat_en": "Moat & Model: Irreplaceable monopoly operating 6 mega cascade hydro stations on the Yangtze River with near-zero marginal generation cost.",
           "quality_zh": "业绩与分红质量：每年经营性净现金流超600亿元，折旧远大于实际维护资本开支，公司章程明确承诺高比例现金分红（派息率约70%）。",
           "quality_en": "Earnings Quality: >60B RMB annual operating cash flow; depreciation far exceeds actual maintenance CapEx, backing a committed ~70% payout ratio.",
           "underval_zh": "为何低估（安全边际）：从中美历史看，无风险利率跌破2.2%后，永续水电资产按DCF折现模型将迎来系统性估值拔升，较近期高点回撤超10%提供买点。",
           "underval_en": "Why Undervalued: With China 10Y bond yields at 2.12%, perpetual hydro cash flows command a structural DCF re-rating; 10% pullback offers entry.",
-          "yahoo_url": "https://finance.yahoo.com/quote/600900.SS/", "sa_url": "https://quote.eastmoney.com/sh600900.html"
+          "yahoo_url": "https://finance.yahoo.com/quote/600900.SS/",
+          "sa_url": "https://quote.eastmoney.com/sh600900.html"
         },
         {
-          "code": "601088.SS", "name_zh": "中国神华", "name_en": "China Shenhua Energy",
-          "price": "¥39.80", "pe": "11.6x", "pe_pct": "35%", "peg": "1.40", "pb": "1.88x",
-          "div": "5.95%", "div_cagr": "+14.2%", "payout": "75%",
+          "code": "601088.SS",
+          "name_zh": "中国神华",
+          "name_en": "China Shenhua Energy",
+          "price": "¥50.20 (+0.52%)",
+          "pe": "18.2x",
+          "pe_pct": "96%",
+          "peg": "14.94",
+          "pb": "2.37x",
+          "div": "4.00%",
+          "div_cagr": "-5.7%",
+          "payout": "74%",
           "moat_zh": "商业模式与护城河：『煤-电-路-港-航』全产业链一体化闭环运营，高比例长协煤合同锁定利润下限，彻底抹平大宗商品周期剧烈波动。",
           "moat_en": "Moat & Model: Integrated 'Coal-Power-Rail-Port' closed-loop model; long-term contract pricing locks in earnings floor across commodity cycles.",
           "quality_zh": "业绩与分红质量：账面净现金极其充裕，有息负债率极低，过去5年分红复合增长率超14%，实际派息率维持在75%高位。",
           "quality_en": "Earnings Quality: Massive net cash balance, minimal debt, >14% 5Y dividend CAGR with a consistent ~75% actual payout ratio.",
           "underval_zh": "为何低估（安全边际）：PE仅11.6倍，近6%的股息率是国内10年期国债收益率的近3倍，是央行互换便利资金最核心的配置标的。",
           "underval_en": "Why Undervalued: 11.6x PE and ~6% dividend yield (nearly 3x China's 10Y bond yield), making it the prime target for PBoC swap facility inflows.",
-          "yahoo_url": "https://finance.yahoo.com/quote/601088.SS/", "sa_url": "https://quote.eastmoney.com/sh601088.html"
+          "yahoo_url": "https://finance.yahoo.com/quote/601088.SS/",
+          "sa_url": "https://quote.eastmoney.com/sh601088.html"
         }
       ]
     },
     "HK": {
       "etfs": [
-        { "code": "2800.HK", "name_zh": "盈富基金 (恒生指数 ETF)", "name_en": "Tracker Fund of HK", "price": "HK$20.85", "pe": "9.6x", "percentile": "21%", "div": "4.05%", "action_zh": "历史低位区间 / 定投持有", "action_en": "Historical Low Zone / DCA", "yahoo_url": "https://finance.yahoo.com/quote/2800.HK/", "sa_url": "https://stockanalysis.com/quote/hkg/2800/" },
-        { "code": "3110.HK", "name_zh": "Global X 恒生高股息率 ETF", "name_en": "Global X Hang Seng High Div", "price": "HK$24.60", "pe": "6.3x", "percentile": "16%", "div": "6.85%", "action_zh": "深度价值洼地 ⭐", "action_en": "Deep Value Pocket ⭐", "yahoo_url": "https://finance.yahoo.com/quote/3110.HK/", "sa_url": "https://stockanalysis.com/quote/hkg/3110/" }
+        {
+          "code": "2800.HK",
+          "name_zh": "盈富基金 (恒生指数 ETF)",
+          "name_en": "Tracker Fund of HK",
+          "price": "HK$23.76 (+0.76%)",
+          "pe": "9.6x",
+          "percentile": "71%",
+          "div": "3.11%",
+          "action_zh": "历史低位区间 / 定投持有",
+          "action_en": "Historical Low Zone / DCA",
+          "yahoo_url": "https://finance.yahoo.com/quote/2800.HK/",
+          "sa_url": "https://stockanalysis.com/quote/hkg/2800/"
+        },
+        {
+          "code": "3110.HK",
+          "name_zh": "Global X 恒生高股息率 ETF",
+          "name_en": "Global X Hang Seng High Div",
+          "price": "HK$28.68 (+0.63%)",
+          "pe": "8.5x",
+          "percentile": "82%",
+          "div": "6.90%",
+          "action_zh": "深度价值洼地 ⭐",
+          "action_en": "Deep Value Pocket ⭐",
+          "yahoo_url": "https://finance.yahoo.com/quote/3110.HK/",
+          "sa_url": "https://stockanalysis.com/quote/hkg/3110/"
+        }
       ],
       "screener": [
         {
-          "code": "0883.HK", "name_zh": "中国海洋石油 (港股)", "name_en": "CNOOC Limited",
-          "price": "HK$18.80", "pe": "6.4x", "pe_pct": "24%", "peg": "0.68", "pb": "1.15x",
-          "div": "7.35%", "div_cagr": "+16.0%", "payout": "44%",
+          "code": "0883.HK",
+          "name_zh": "中国海洋石油 (港股)",
+          "name_en": "CNOOC Limited",
+          "price": "HK$23.12 (-1.03%)",
+          "pe": "7.1x",
+          "pe_pct": "76%",
+          "peg": "0.16",
+          "pb": "1.09x",
+          "div": "9.60%",
+          "div_cagr": "+4.2%",
+          "payout": "40%",
           "moat_zh": "商业模式与护城河：全球成本最低的海上油气勘探生产商，桶油主要完全成本仅约 28 美元/桶，储量替代率连续多年保持在 130% 以上。",
           "moat_en": "Moat & Model: Lowest-cost offshore E&P globally with all-in cost near $28/bbl and reserve replacement ratio consistently >130%.",
           "quality_zh": "业绩与分红质量：ROE 高达 19%，净现金状态，派息率仅 44% 却能提供超 7.3% 的极高股息率，分红安全垫极厚。",
           "quality_en": "Earnings Quality: 19% ROE, net cash balance sheet; a conservative 44% payout ratio still delivers a massive >7.3% dividend yield.",
           "underval_zh": "为何低估（安全边际）：相比A股（600938.SS）折价超35%，PE仅6.4倍，PEG仅0.68，即便油价跌至55美元依然能维持高分红。",
           "underval_en": "Why Undervalued: Trades at >35% discount to its A-share, 6.4x PE and 0.68 PEG; highly profitable even if oil drops to $55/bbl.",
-          "yahoo_url": "https://finance.yahoo.com/quote/0883.HK/", "sa_url": "https://stockanalysis.com/quote/hkg/0883/"
+          "yahoo_url": "https://finance.yahoo.com/quote/0883.HK/",
+          "sa_url": "https://stockanalysis.com/quote/hkg/0883/"
         },
         {
-          "code": "0941.HK", "name_zh": "中国移动 (港股)", "name_en": "China Mobile Limited",
-          "price": "HK$72.80", "pe": "10.3x", "pe_pct": "30%", "peg": "1.35", "pb": "1.08x",
-          "div": "6.92%", "div_cagr": "+8.5%", "payout": "71%",
+          "code": "0941.HK",
+          "name_zh": "中国移动 (港股)",
+          "name_en": "China Mobile Limited",
+          "price": "HK$77.10 (-0.32%)",
+          "pe": "11.4x",
+          "pe_pct": "88%",
+          "peg": "52.49",
+          "pb": "1.02x",
+          "div": "10.60%",
+          "div_cagr": "+35.4%",
+          "payout": "79%",
           "moat_zh": "商业模式与护城河：全球最大移动通信运营商（10亿级用户基本盘）+ 移动云算力龙头，5G资本开支已进入下行通道，自由现金流全面释放。",
           "moat_en": "Moat & Model: World's largest telecom operator (~1B subscribers) + cloud leader; 5G CapEx cycle is declining, unlocking massive FCF.",
           "quality_zh": "业绩与分红质量：账面广义现金超4000亿人民币，零有息负债压力，官方承诺派息率逐步提升至75%以上。",
           "quality_en": "Earnings Quality: Over 400B RMB in cash reserves, zero debt pressure, management committed to raising payout ratio above 75%.",
           "underval_zh": "为何低估（安全边际）：H股较A股折价超30%，PB接近1倍净资产，近7%股息率吸引南向险资持续锁仓。",
           "underval_en": "Why Undervalued: >30% discount to A-share, 1.08x P/B, and ~7% yield acting as a magnet for Southbound institutional capital.",
-          "yahoo_url": "https://finance.yahoo.com/quote/0941.HK/", "sa_url": "https://stockanalysis.com/quote/hkg/0941/"
+          "yahoo_url": "https://finance.yahoo.com/quote/0941.HK/",
+          "sa_url": "https://stockanalysis.com/quote/hkg/0941/"
         }
       ]
     }
   },
   "calendar": [
-    { "date": "2026-10-30", "market": "US", "type": "macro", "title_zh": "美国三季度 GDP 初值 & 核心 PCE 物价指数", "title_en": "US Q3 GDP Advance & Core PCE Price Index", "source_name": "BEA.gov Official", "source_url": "https://www.bea.gov/news/schedule" },
-    { "date": "2026-10-31", "market": "CN", "type": "macro", "title_zh": "中国 10 月官方制造业 PMI 公布", "title_en": "China Official Manufacturing PMI (Oct)", "source_name": "国家统计局 (NBS)", "source_url": "https://www.stats.gov.cn/sj/zxfb/" },
-    { "date": "2026-11-01", "market": "US", "type": "macro", "title_zh": "美国非农就业报告 (NFP) 与失业率", "title_en": "US Employment Situation (Non-Farm Payrolls)", "source_name": "BLS.gov Official", "source_url": "https://www.bls.gov/schedule/news_release/empsit.htm" },
-    { "date": "2026-11-05", "market": "CA", "type": "earnings", "title_zh": "加拿大自然资源 (CNQ.TO) 财报与分红宣告", "title_en": "Canadian Natural Resources (CNQ.TO) Earnings", "source_name": "Yahoo Earnings Calendar", "source_url": "https://finance.yahoo.com/quote/CNQ.TO/" },
-    { "date": "2026-11-07", "market": "US", "type": "macro", "title_zh": "美联储 FOMC 利率决议与鲍威尔新闻发布会", "title_en": "Federal Reserve FOMC Rate Decision & Press Conf", "source_name": "FederalReserve.gov", "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
-    { "date": "2026-11-13", "market": "US", "type": "macro", "title_zh": "美国 CPI 消费者物价指数发布", "title_en": "US Consumer Price Index (CPI) Release", "source_name": "BLS.gov Official", "source_url": "https://www.bls.gov/schedule/news_release/cpi.htm" },
-    { "date": "2026-12-11", "market": "CA", "type": "macro", "title_zh": "加拿大央行 (BoC) 议息决议公布", "title_en": "Bank of Canada Interest Rate Announcement", "source_name": "BankOfCanada.ca", "source_url": "https://www.bankofcanada.ca/2026/08/fad-schedule-2026/" }
+    {
+      "date": "2026-10-30",
+      "market": "US",
+      "type": "macro",
+      "title_zh": "美国三季度 GDP 初值 & 核心 PCE 物价指数",
+      "title_en": "US Q3 GDP Advance & Core PCE Price Index",
+      "source_name": "BEA.gov Official",
+      "source_url": "https://www.bea.gov/news/schedule"
+    },
+    {
+      "date": "2026-10-31",
+      "market": "CN",
+      "type": "macro",
+      "title_zh": "中国 10 月官方制造业 PMI 公布",
+      "title_en": "China Official Manufacturing PMI (Oct)",
+      "source_name": "国家统计局 (NBS)",
+      "source_url": "https://www.stats.gov.cn/sj/zxfb/"
+    },
+    {
+      "date": "2026-11-01",
+      "market": "US",
+      "type": "macro",
+      "title_zh": "美国非农就业报告 (NFP) 与失业率",
+      "title_en": "US Employment Situation (Non-Farm Payrolls)",
+      "source_name": "BLS.gov Official",
+      "source_url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+    },
+    {
+      "date": "2026-11-05",
+      "market": "CA",
+      "type": "earnings",
+      "title_zh": "加拿大自然资源 (CNQ.TO) 财报与分红宣告",
+      "title_en": "Canadian Natural Resources (CNQ.TO) Earnings",
+      "source_name": "Yahoo Earnings Calendar",
+      "source_url": "https://finance.yahoo.com/quote/CNQ.TO/"
+    },
+    {
+      "date": "2026-11-07",
+      "market": "US",
+      "type": "macro",
+      "title_zh": "美联储 FOMC 利率决议与鲍威尔新闻发布会",
+      "title_en": "Federal Reserve FOMC Rate Decision & Press Conf",
+      "source_name": "FederalReserve.gov",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "date": "2026-11-13",
+      "market": "US",
+      "type": "macro",
+      "title_zh": "美国 CPI 消费者物价指数发布",
+      "title_en": "US Consumer Price Index (CPI) Release",
+      "source_name": "BLS.gov Official",
+      "source_url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+    },
+    {
+      "date": "2026-12-11",
+      "market": "CA",
+      "type": "macro",
+      "title_zh": "加拿大央行 (BoC) 议息决议公布",
+      "title_en": "Bank of Canada Interest Rate Announcement",
+      "source_name": "BankOfCanada.ca",
+      "source_url": "https://www.bankofcanada.ca/2026/08/fad-schedule-2026/"
+    }
   ]
 }
