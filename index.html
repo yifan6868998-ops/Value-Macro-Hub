@@ -3,22 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Value & Macro Hub | 全球宏观与价值投资决策中枢</title>
+  <title>Global Value & Macro Hub V3 | 全球宏观与深度价值决策终端</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: { 500: '#3b82f6', 600: '#2563eb' }
-          }
-        }
-      }
-    }
+    tailwind.config = { darkMode: 'class' }
   </script>
   <script>
-    // 初始化主题：优先读取本地偏好，否则自动跟随系统深浅色
     function initTheme() {
       const savedTheme = localStorage.getItem('theme');
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -38,77 +28,74 @@
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-200 font-sans">
 
-  <!-- 顶部导航与全局水温条 -->
-  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200 dark:border-slate-800">
+  <!-- 顶部导航与可点击溯源定价锚 -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
         <span class="text-2xl">🧭</span>
         <div>
-          <h1 id="ui-title" class="font-bold text-lg tracking-tight">全球宏观与价值投资决策中枢</h1>
+          <h1 id="ui-title" class="font-bold text-lg tracking-tight">全球宏观与深度价值投资决策中枢</h1>
           <p id="ui-updated" class="text-xs text-slate-500 dark:text-slate-400">数据更新于: 加载中...</p>
         </div>
       </div>
 
-      <!-- 语言与主题控制栏 -->
       <div class="flex items-center gap-2">
-        <button onclick="toggleLang()" id="lang-btn" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <a href="https://www.themarketbrew.com/macro" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition">
+          🍺 The Market Brew 原文库 ↗
+        </a>
+        <button onclick="toggleLang()" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
           🌐 EN / 中文
         </button>
-        <button onclick="cycleTheme()" id="theme-btn" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <button onclick="cycleTheme()" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
           🌓 自动/深浅
         </button>
       </div>
     </div>
 
-    <!-- 全球定价锚滚动条 -->
-    <div class="bg-slate-100/80 dark:bg-slate-900/60 border-t border-slate-200/70 dark:border-slate-800/70">
-      <div id="global-tickers" class="max-w-7xl mx-auto px-4 py-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-xs">
-        <!-- JS 动态渲染 -->
-      </div>
+    <!-- 全球定价锚（悬停显示来源，点击直达对应 Yahoo / FRED 页面） -->
+    <div class="bg-slate-100/90 dark:bg-slate-900/70 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div id="global-tickers" class="max-w-7xl mx-auto px-4 py-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-xs"></div>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
 
-    <!-- 模块 1：AI 全局因果推演与决策结论 -->
+    <!-- 模块 1：对标 The Market Brew 的四层深度宏观因果推演 -->
     <section>
-      <div class="flex items-center justify-between mb-3">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
         <h2 id="sec-ai-title" class="text-lg font-bold flex items-center gap-2">
-          <span>🤖</span> <span>今日宏观因果推演与大概率方向 (What & Why)</span>
+          <span>🧠</span> <span>深度宏观因果链与二阶效应推演 (The Market Brew 研报框架)</span>
         </h2>
-        <span id="sec-ai-sub" class="text-xs text-slate-500 dark:text-slate-400">点击卡片下方按钮可随时调取底层原始数据</span>
+        <span id="sec-ai-sub" class="text-xs text-slate-500 dark:text-slate-400">所有数据与逻辑均附带原始核验链接，悬停或点击即可溯源</span>
       </div>
-      <div id="ai-deductions-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <!-- JS 动态渲染 -->
-      </div>
+      <div id="ai-deductions-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
     </section>
 
-    <!-- 模块 2：四大市场流动性预测 & 股债性价比 (ERP) -->
+    <!-- 模块 2：流动性预测 & ERP 股债性价比（含透明推导公式与数据源直达） -->
     <section>
-      <h2 id="sec-liq-title" class="text-lg font-bold mb-3 flex items-center gap-2">
-        <span>💧</span> <span>跨市场流动性预测与股债性价比 (ERP 水位)</span>
-      </h2>
-      <div id="liquidity-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- JS 动态渲染 -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <h2 id="sec-liq-title" class="text-lg font-bold flex items-center gap-2">
+          <span>💧</span> <span>四大市场流动性水位与 ERP 安全边际推导公式</span>
+        </h2>
+        <span id="sec-liq-sub" class="text-xs text-slate-500 dark:text-slate-400">ERP = 股市盈利收益率(1/PE) - 10Y国债无风险利率（点击卡片右上角直达官方源）</span>
       </div>
+      <div id="liquidity-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
     </section>
 
-    <!-- 模块 3：债 · 油 · 金 跨资产定价锚 -->
+    <!-- 模块 3：债 · 油 · 金 跨资产定价锚（每一项均可点击跳转 Yahoo/FRED） -->
     <section>
       <h2 id="sec-macro-title" class="text-lg font-bold mb-3 flex items-center gap-2">
-        <span>⚖️</span> <span>债券 · 原油 · 黄金 宏观避险与通胀监控</span>
+        <span>⚖️</span> <span>债券 · 原油 · 黄金 宏观避险与通胀监控（点击数值直达数据源）</span>
       </h2>
-      <div id="macro-assets-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- JS 动态渲染 -->
-      </div>
+      <div id="macro-assets-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- 模块 4：四大市场深度价值看板 (CA / US / CN / HK) -->
+    <!-- 模块 4：四大市场 ETF 估值 & 深度基本面低估选股池 -->
     <section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
       <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
         <div>
-          <h2 id="sec-market-title" class="text-lg font-bold">📊 四大市场核心 ETF 估值与低估错杀选股池</h2>
-          <p id="sec-market-sub" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">按价值投资安全边际自动筛选（低PE / 高股息 / 历史低分位）</p>
+          <h2 id="sec-market-title" class="text-lg font-bold">📊 四大市场核心 ETF 估值与深度基本面错杀选股池</h2>
+          <p id="sec-market-sub" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">整合 Yahoo Finance 与 Stock Analysis 双数据源：含 PE分位、PEG、分红复合增长率、派息率与护城河拆解</p>
         </div>
         <div class="flex flex-wrap gap-2" id="market-tabs">
           <button onclick="switchMarket('CA')" data-market="CA" class="market-tab px-4 py-2 rounded-xl text-sm font-semibold transition">🇨🇦 加拿大 (CA)</button>
@@ -119,18 +106,18 @@
       </div>
 
       <!-- 核心 ETF 估值表 -->
-      <div class="mb-6">
-        <h3 id="sub-etf-title" class="text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">1. 核心宽基与红利 ETF 估值水位</h3>
+      <div class="mb-8">
+        <h3 id="sub-etf-title" class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">1. 核心宽基与红利 ETF 估值水位（点击代码跳转 Yahoo / Stock Analysis）</h3>
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-sm">
             <thead>
               <tr class="border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
-                <th class="py-2.5 px-3" id="th-code">代码</th>
+                <th class="py-2.5 px-3" id="th-code">代码与数据源</th>
                 <th class="py-2.5 px-3" id="th-name">名称</th>
-                <th class="py-2.5 px-3" id="th-price">最新价</th>
+                <th class="py-2.5 px-3" id="th-price">最新价 (点击核验)</th>
                 <th class="py-2.5 px-3" id="th-pe">PE (TTM)</th>
-                <th class="py-2.5 px-3" id="th-pct">5年估值分位</th>
-                <th class="py-2.5 px-3" id="th-div">股息率</th>
+                <th class="py-2.5 px-3" id="th-pct">5年价格分位</th>
+                <th class="py-2.5 px-3" id="th-div">股息率 (TTM)</th>
                 <th class="py-2.5 px-3" id="th-act">价值策略信号</th>
               </tr>
             </thead>
@@ -139,19 +126,22 @@
         </div>
       </div>
 
-      <!-- 低估/错杀个股筛选器 -->
+      <!-- 深度价值选股拆解 -->
       <div>
-        <h3 id="sub-screen-title" class="text-sm font-bold text-slate-600 dark:text-slate-300 mb-3">2. 每日自动筛选：低估值 / 高股息 / 错杀好公司观察池</h3>
-        <div id="screener-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <h3 id="sub-screen-title" class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">2. 深度价值选股池：多维估值指标 (PE分位 / PEG / 分红增长 / 派息率) + 商业模式与错杀逻辑拆解</h3>
+        <div id="screener-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
       </div>
     </section>
 
-    <!-- 模块 5：全球宏观与财报日历 -->
+    <!-- 模块 5：锁死官方权威源的全球宏观与财报日历 -->
     <section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
-        <h2 id="sec-cal-title" class="text-lg font-bold flex items-center gap-2">
-          <span>📅</span> <span>关键宏观数据发布与持仓财报日历</span>
-        </h2>
+        <div>
+          <h2 id="sec-cal-title" class="text-lg font-bold flex items-center gap-2">
+            <span>📅</span> <span>权威宏观数据发布与持仓财报日历（已锁定美联储/BLS/各国央行官方日程）</span>
+          </h2>
+          <p id="sec-cal-sub" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">点击每条日程右侧按钮可直接打开美联储、劳工局、统计局或 Yahoo 官方原始排期页面核验</p>
+        </div>
         <div class="flex flex-wrap gap-1.5 text-xs" id="cal-filters">
           <button onclick="filterCalendar('ALL')" data-cal="ALL" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">全部 (All)</button>
           <button onclick="filterCalendar('CA')" data-cal="CA" class="cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700">🇨🇦 CA</button>
@@ -166,7 +156,7 @@
   </main>
 
   <footer class="max-w-7xl mx-auto px-4 py-8 text-center text-xs text-slate-400 dark:text-slate-600">
-    Powered by Cloudflare Pages & GitHub Actions · 100% Free Automated Value Investing System
+    Data Verified via Yahoo Finance, Stock Analysis, FRED, Federal Reserve, BLS, Bank of Canada & Eastmoney · 100% Free Automated Architecture
   </footer>
 
   <script>
@@ -177,45 +167,49 @@
 
     const i18n = {
       zh: {
-        title: '全球宏观与价值投资决策中枢',
-        updated: '数据自动更新于: ',
-        aiTitle: '今日宏观因果推演与大概率方向 (What & Why)',
-        aiSub: '默认展示核心推演结论，点击底部按钮可随时展开底层原始数据',
-        eventLabel: '📌 核心触发事件：',
-        logicLabel: '🧠 因果传导逻辑：',
-        outcomeLabel: '🎯 大概率走势与策略：',
-        drawerBtn: '📊 调取/收起底层支撑数据',
-        liqTitle: '跨市场流动性预测与股债性价比 (ERP 水位)',
-        liqScore: '流动性宽松指数',
-        macroTitle: '债券 · 原油 · 黄金 宏观避险与通胀监控',
-        marketTitle: '📊 四大市场核心 ETF 估值与低估错杀选股池',
-        marketSub: '按价值投资安全边际自动筛选（低PE / 高股息 / 历史低分位）',
-        etfSub: '1. 核心宽基与红利 ETF 估值水位',
-        screenSub: '2. 每日自动筛选：低估值 / 高股息 / 错杀好公司观察池',
-        thCode: '代码', thName: '名称', thPrice: '最新价', thPe: 'PE (TTM)', thPct: '5年估值分位', thDiv: '股息率', thAct: '价值策略信号',
-        calTitle: '关键宏观数据发布与持仓财报日历',
-        typeMacro: '宏观数据/央行', typeEarnings: '公司财报/分红',
+        title: '全球宏观与深度价值投资决策中枢',
+        updated: '数据自动抓取与核验于: ',
+        aiTitle: '深度宏观因果链与二阶效应推演 (The Market Brew 研报框架)',
+        aiSub: '所有数据与逻辑均附带原始核验链接，悬停或点击即可溯源',
+        ctxLabel: '1️⃣ 宏观背景与核心矛盾 (Context)：',
+        transLabel: '2️⃣ 跨资产与商业传导机制 (Transmission)：',
+        secOrderLabel: '3️⃣ 二阶效应与结构分化 (Second-Order Effects)：',
+        outcomeLabel: '4️⃣ 价值与 ETF 实操结论 (Actionable Strategy)：',
+        drawerBtn: '📊 展开/收起底层支撑数据明细',
+        liqTitle: '四大市场流动性水位与 ERP 安全边际推导公式',
+        liqSub: 'ERP = 股市盈利收益率(1/PE) - 10Y国债无风险利率（点击卡片右上角直达官方源）',
+        macroTitle: '债券 · 原油 · 黄金 宏观避险与通胀监控（点击数值直达数据源）',
+        marketTitle: '📊 四大市场核心 ETF 估值与深度基本面错杀选股池',
+        marketSub: '整合 Yahoo Finance 与 Stock Analysis 双数据源：含 PE分位、PEG、分红复合增长率、派息率与护城河拆解',
+        etfSub: '1. 核心宽基与红利 ETF 估值水位（点击代码或价格直达 Yahoo / Stock Analysis）',
+        screenSub: '2. 深度价值选股池：多维估值指标 (PE分位 / PEG / 分红增长 / 派息率) + 商业模式与错杀逻辑拆解',
+        thCode: '代码与双源链接', thName: '名称', thPrice: '最新价 (点击核验)', thPe: 'PE (TTM)', thPct: '5年价格分位', thDiv: '股息率 (TTM)', thAct: '价值策略信号',
+        calTitle: '权威宏观数据发布与持仓财报日历（已锁定美联储/BLS/各国央行官方日程）',
+        calSub: '点击每条日程右侧按钮可直接打开美联储、劳工局、统计局或 Yahoo 官方原始排期页面核验',
+        typeMacro: '官方宏观日程', typeEarnings: '公司财报/分红',
         tabs: { CA: '🇨🇦 加拿大', US: '🇺🇸 美股', CN: '🇨🇳 A股', HK: '🇭🇰 港股' }
       },
       en: {
-        title: 'Global Macro & Value Investing Hub',
-        updated: 'Last Automated Update: ',
-        aiTitle: 'Daily Macro Causal Deduction & High-Prob Outlook',
-        aiSub: 'Executive summary shown by default; click below to inspect raw metrics',
-        eventLabel: '📌 Trigger Event: ',
-        logicLabel: '🧠 Causal Logic Chain: ',
-        outcomeLabel: '🎯 High-Probability Outcome: ',
-        drawerBtn: '📊 Inspect / Hide Underlying Data',
-        liqTitle: 'Cross-Market Liquidity Forecast & Equity Risk Premium (ERP)',
-        liqScore: 'Liquidity Index',
-        macroTitle: 'Bonds · Crude Oil · Gold Macro & Inflation Anchors',
-        marketTitle: '📊 Core ETF Valuations & Deep Value Stock Screener',
-        marketSub: 'Automated filtering by Margin of Safety (Low PE / High Yield / Low Percentile)',
-        etfSub: '1. Core Broad & Dividend ETF Valuation Percentiles',
-        screenSub: '2. Automated Value Screener: Oversold & High-Yield Compounders',
-        thCode: 'Ticker', thName: 'Name', thPrice: 'Price', thPe: 'PE (TTM)', thPct: '5Y Percentile', thDiv: 'Div Yield', thAct: 'Value Signal',
-        calTitle: 'Macro Releases & Holdings Earnings Calendar',
-        typeMacro: 'Macro / Central Bank', typeEarnings: 'Earnings / Dividend',
+        title: 'Global Macro & Deep Value Investing Hub V3',
+        updated: 'Last Verified Update: ',
+        aiTitle: 'Deep Macro Causal Chains & Second-Order Effects (The Market Brew Framework)',
+        aiSub: 'Hover or click any metric/source badge to verify directly on the original platform',
+        ctxLabel: '1️⃣ Macro Context & Core Tension: ',
+        transLabel: '2️⃣ Cross-Asset Transmission Mechanism: ',
+        secOrderLabel: '3️⃣ Second-Order Effects & Divergence: ',
+        outcomeLabel: '4️⃣ Actionable Value & ETF Strategy: ',
+        drawerBtn: '📊 Inspect / Hide Underlying Raw Metrics',
+        liqTitle: 'Liquidity Forecast & Equity Risk Premium (ERP) Formula Breakdown',
+        liqSub: 'ERP = Earnings Yield (1/PE) - 10Y Risk-Free Yield (Click top-right badge for official source)',
+        macroTitle: 'Bonds · Crude Oil · Gold Macro Anchors (Click any number to verify on Yahoo/FRED)',
+        marketTitle: '📊 Core ETF Valuations & Deep Fundamental Value Screener',
+        marketSub: 'Dual-sourced from Yahoo Finance & Stock Analysis: PE Percentile, PEG, 5Y Div CAGR, Payout Ratio & Moat Breakdown',
+        etfSub: '1. Core Broad & Dividend ETF Valuation Percentiles (Click ticker/price to verify)',
+        screenSub: '2. Deep Value Screener: Multi-Factor Metrics + Business Model, Earnings Quality & Undervaluation Thesis',
+        thCode: 'Ticker & Sources', thName: 'Name', thPrice: 'Price (Click to Verify)', thPe: 'PE (TTM)', thPct: '5Y Percentile', thDiv: 'Div Yield', thAct: 'Value Signal',
+        calTitle: 'Authoritative Macro & Earnings Calendar (Locked to Fed / BLS / BoC / NBS)',
+        calSub: 'Click the right-side verification badge on any event to open the official government or exchange schedule',
+        typeMacro: 'Official Macro', typeEarnings: 'Earnings / Div',
         tabs: { CA: '🇨🇦 Canada', US: '🇺🇸 US Market', CN: '🇨🇳 China A', HK: '🇭🇰 Hong Kong' }
       }
     };
@@ -228,18 +222,12 @@
 
     function cycleTheme() {
       const isDark = document.documentElement.classList.contains('dark');
-      if (isDark) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+      document.documentElement.classList.toggle('dark', !isDark);
+      localStorage.setItem('theme', !isDark ? 'dark' : 'light');
     }
 
     function toggleDrawer(id) {
-      const el = document.getElementById('drawer-' + id);
-      el.classList.toggle('hidden');
+      document.getElementById('drawer-' + id).classList.toggle('hidden');
     }
 
     function switchMarket(m) {
@@ -257,9 +245,10 @@
       const t = i18n[currentLang];
       document.getElementById('ui-title').textContent = t.title;
       document.getElementById('ui-updated').textContent = t.updated + appData.last_updated;
-      document.getElementById('sec-ai-title').innerHTML = `<span>🤖</span><span>${t.aiTitle}</span>`;
+      document.getElementById('sec-ai-title').innerHTML = `<span>🧠</span><span>${t.aiTitle}</span>`;
       document.getElementById('sec-ai-sub').textContent = t.aiSub;
       document.getElementById('sec-liq-title').innerHTML = `<span>💧</span><span>${t.liqTitle}</span>`;
+      document.getElementById('sec-liq-sub').textContent = t.liqSub;
       document.getElementById('sec-macro-title').innerHTML = `<span>⚖️</span><span>${t.macroTitle}</span>`;
       document.getElementById('sec-market-title').textContent = t.marketTitle;
       document.getElementById('sec-market-sub').textContent = t.marketSub;
@@ -273,29 +262,44 @@
       document.getElementById('th-div').textContent = t.thDiv;
       document.getElementById('th-act').textContent = t.thAct;
       document.getElementById('sec-cal-title').innerHTML = `<span>📅</span><span>${t.calTitle}</span>`;
+      document.getElementById('sec-cal-sub').textContent = t.calSub;
 
-      // 渲染顶部定价锚
+      // 1. 顶部全局定价锚（带悬停提示与点击跳转）
       document.getElementById('global-tickers').innerHTML = appData.global_tickers.map(item => `
-        <div class="flex items-center justify-between bg-white dark:bg-slate-800/90 px-3 py-1.5 rounded-lg border border-slate-200/80 dark:border-slate-700/80">
-          <span class="text-slate-500 dark:text-slate-400 font-medium">${currentLang === 'zh' ? item.name_zh : item.name_en}</span>
+        <a href="${item.source_url}" target="_blank" rel="noopener"
+           title="数据来源: ${item.source_name} (点击直达核验)"
+           class="group flex items-center justify-between bg-white dark:bg-slate-800/90 px-3 py-1.5 rounded-lg border border-slate-200/80 dark:border-slate-700/80 hover:border-blue-500 dark:hover:border-blue-400 transition">
+          <span class="text-slate-500 dark:text-slate-400 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400">${currentLang === 'zh' ? item.name_zh : item.name_en} ↗</span>
           <div class="font-bold">${item.value} <span class="text-[11px] font-normal text-slate-400">${item.change}</span></div>
-        </div>
+        </a>
       `).join('');
 
-      // 渲染 AI 因果推演卡
+      // 2. 四层深度宏观因果推演卡
       document.getElementById('ai-deductions-grid').innerHTML = appData.ai_deductions.map(d => `
         <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm flex flex-col justify-between">
-          <div class="space-y-3">
-            <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">
-              ${currentLang === 'zh' ? d.tag_zh : d.tag_en}
-            </span>
-            <p class="text-sm"><strong class="text-slate-700 dark:text-slate-200">${t.eventLabel}</strong>${currentLang === 'zh' ? d.event_zh : d.event_en}</p>
-            <p class="text-sm text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
-              <strong class="text-slate-800 dark:text-slate-100">${t.logicLabel}</strong>${currentLang === 'zh' ? d.logic_zh : d.logic_en}
-            </p>
-            <p class="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">
+                ${currentLang === 'zh' ? d.tag_zh : d.tag_en}
+              </span>
+              <a href="${d.source_url}" target="_blank" rel="noopener" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                🔗 ${d.source_name} ↗
+              </a>
+            </div>
+            <div class="text-sm leading-relaxed">
+              <strong class="text-slate-800 dark:text-slate-100 block mb-0.5">${t.ctxLabel}</strong>
+              <span class="text-slate-600 dark:text-slate-300">${currentLang === 'zh' ? d.context_zh : d.context_en}</span>
+            </div>
+            <div class="text-sm leading-relaxed bg-slate-50 dark:bg-slate-800/60 p-3.5 rounded-xl border border-slate-200/60 dark:border-slate-700/60 whitespace-pre-line">
+              <strong class="text-slate-800 dark:text-slate-100 block mb-1">${t.transLabel}</strong>${currentLang === 'zh' ? d.transmission_zh : d.transmission_en}
+            </div>
+            <div class="text-sm leading-relaxed bg-amber-50/70 dark:bg-amber-950/30 p-3 rounded-xl border border-amber-200/60 dark:border-amber-800/50">
+              <strong class="text-amber-900 dark:text-amber-300 block mb-0.5">${t.secOrderLabel}</strong>
+              <span class="text-slate-700 dark:text-slate-300">${currentLang === 'zh' ? d.second_order_zh : d.second_order_en}</span>
+            </div>
+            <div class="text-sm font-semibold text-emerald-700 dark:text-emerald-400 pt-1">
               <strong>${t.outcomeLabel}</strong>${currentLang === 'zh' ? d.outcome_zh : d.outcome_en}
-            </p>
+            </div>
           </div>
           <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
             <button onclick="toggleDrawer('${d.id}')" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
@@ -308,24 +312,34 @@
         </div>
       `).join('');
 
-      // 渲染流动性预测条
+      // 3. 流动性预测与透明 ERP 推导公式
       document.getElementById('liquidity-grid').innerHTML = appData.liquidity_bar.map(l => `
-        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-bold text-sm">${currentLang === 'zh' ? l.name_zh : l.name_en}</span>
-            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">${l.score} / 100</span>
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-sm">${currentLang === 'zh' ? l.name_zh : l.name_en}</span>
+              <a href="${l.source_url}" target="_blank" rel="noopener" title="点击查看官方数据源: ${l.source_name}" class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                ${l.source_name} ↗
+              </a>
+            </div>
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="text-slate-500 dark:text-slate-400">${currentLang === 'zh' ? l.state_zh : l.state_en}</span>
+              <span class="font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">${l.score} / 100</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden mb-2.5">
+              <div class="bg-blue-600 dark:bg-blue-500 h-full rounded-full" style="width: ${l.score}%"></div>
+            </div>
+            <div class="text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-2">
+              ${currentLang === 'zh' ? l.erp_zh : l.erp_en}
+            </div>
           </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden mb-2">
-            <div class="bg-blue-600 dark:bg-blue-500 h-full rounded-full" style="width: ${l.score}%"></div>
-          </div>
-          <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
-            <span>${currentLang === 'zh' ? l.state_zh : l.state_en}</span>
-            <span class="font-semibold text-slate-800 dark:text-slate-200">${currentLang === 'zh' ? l.erp_zh : l.erp_en}</span>
+          <div class="text-[11px] leading-snug text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/70 p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-700/60">
+            📐 ${currentLang === 'zh' ? l.formula_zh : l.formula_en}
           </div>
         </div>
       `).join('');
 
-      // 渲染债油金
+      // 4. 债油金（每项带直达链接）
       const ma = appData.macro_assets;
       document.getElementById('macro-assets-grid').innerHTML = ['bonds', 'oil', 'gold'].map(key => {
         const block = ma[key];
@@ -336,10 +350,10 @@
             </h3>
             <div class="space-y-2 text-xs">
               ${block.metrics.map(m => `
-                <div class="flex justify-between py-1">
-                  <span class="text-slate-500 dark:text-slate-400">${currentLang === 'zh' ? m.label_zh : m.label_en}</span>
-                  <span class="font-semibold">${m.val}</span>
-                </div>
+                <a href="${m.url}" target="_blank" rel="noopener" title="点击跳转原始数据页核验" class="flex justify-between py-1.5 px-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition group">
+                  <span class="text-slate-500 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">${currentLang === 'zh' ? m.label_zh : m.label_en} ↗</span>
+                  <span class="font-semibold underline decoration-dotted underline-offset-4">${m.val}</span>
+                </a>
               `).join('')}
             </div>
           </div>
@@ -355,45 +369,88 @@
       document.querySelectorAll('.market-tab').forEach(btn => {
         const m = btn.getAttribute('data-market');
         btn.textContent = t.tabs[m];
-        if (m === currentMarket) {
-          btn.className = 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white shadow-sm';
-        } else {
-          btn.className = 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700';
-        }
+        btn.className = m === currentMarket
+          ? 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-blue-600 text-white shadow-sm'
+          : 'market-tab px-4 py-2 rounded-xl text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700';
       });
 
       const mData = appData.markets[currentMarket];
       document.getElementById('etf-table-body').innerHTML = mData.etfs.map(e => `
         <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-          <td class="py-3 px-3 font-mono font-bold text-blue-600 dark:text-blue-400">${e.code}</td>
-          <td class="py-3 px-3 font-medium">${currentLang === 'zh' ? e.name_zh : e.name_en}</td>
-          <td class="py-3 px-3 font-semibold">${e.price}</td>
-          <td class="py-3 px-3">${e.pe}</td>
           <td class="py-3 px-3">
-            <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800">${e.percentile}</span>
+            <div class="flex items-center gap-2">
+              <a href="${e.yahoo_url}" target="_blank" rel="noopener" title="点击跳转 Yahoo Finance" class="font-mono font-bold text-blue-600 dark:text-blue-400 hover:underline">${e.code} ↗</a>
+              <a href="${e.sa_url}" target="_blank" rel="noopener" title="点击跳转 Stock Analysis / 东方财富深度财务" class="text-[10px] px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-semibold hover:bg-blue-100 dark:hover:bg-blue-900">SA/财务</a>
+            </div>
           </td>
+          <td class="py-3 px-3 font-medium">${currentLang === 'zh' ? e.name_zh : e.name_en}</td>
+          <td class="py-3 px-3 font-semibold">
+            <a href="${e.yahoo_url}" target="_blank" rel="noopener" title="来源: Yahoo Finance 实时行情" class="hover:text-blue-600 underline decoration-dotted">${e.price}</a>
+          </td>
+          <td class="py-3 px-3">${e.pe}</td>
+          <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 dark:bg-slate-800">${e.percentile}</span></td>
           <td class="py-3 px-3 font-semibold text-emerald-600 dark:text-emerald-400">${e.div}</td>
           <td class="py-3 px-3 text-xs font-semibold">${currentLang === 'zh' ? e.action_zh : e.action_en}</td>
         </tr>
       `).join('');
 
       document.getElementById('screener-grid').innerHTML = mData.screener.map(s => `
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 flex flex-col justify-between space-y-4">
           <div>
-            <div class="flex items-center justify-between mb-1">
-              <span class="font-mono font-bold text-blue-600 dark:text-blue-400">${s.code}</span>
-              <span class="font-bold text-sm">${s.price}</span>
+            <!-- 股票头部与双数据源直达按钮 -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-200 dark:border-slate-700">
+              <div>
+                <div class="flex items-center gap-2">
+                  <a href="${s.yahoo_url}" target="_blank" rel="noopener" title="跳转 Yahoo Finance" class="font-mono font-bold text-base text-blue-600 dark:text-blue-400 hover:underline">${s.code}</a>
+                  <span class="font-bold text-base">${currentLang === 'zh' ? s.name_zh : s.name_en}</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <a href="${s.yahoo_url}" target="_blank" rel="noopener" class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 hover:underline">🔗 Yahoo 行情 ↗</a>
+                  <a href="${s.sa_url}" target="_blank" rel="noopener" class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 hover:underline">📊 Stock Analysis 深度财报 ↗</a>
+                </div>
+              </div>
+              <a href="${s.yahoo_url}" target="_blank" rel="noopener" title="点击在 Yahoo Finance 核验最新价" class="text-right">
+                <div class="font-bold text-lg hover:text-blue-600 underline decoration-dotted">${s.price}</div>
+              </a>
             </div>
-            <div class="font-semibold text-sm mb-2">${currentLang === 'zh' ? s.name_zh : s.name_en}</div>
-            <div class="flex gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3">
-              <span>PE: <strong class="text-slate-700 dark:text-slate-200">${s.pe}</strong></span>
-              <span>PB: <strong class="text-slate-700 dark:text-slate-200">${s.pb}</strong></span>
-              <span>Div: <strong class="text-emerald-600 dark:text-emerald-400">${s.div}</strong></span>
+
+            <!-- 7大核心价值与分红指标矩阵 -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 py-3 text-center border-b border-slate-200 dark:border-slate-700">
+              <a href="${s.sa_url}" target="_blank" title="点击查看历史PE" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">PE (TTM)</div>
+                <div class="font-bold text-xs mt-0.5">${s.pe}</div>
+              </a>
+              <a href="${s.sa_url}" target="_blank" title="5年历史PE/价格分位数" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">5Y 分位数</div>
+                <div class="font-bold text-xs text-blue-600 dark:text-blue-400 mt-0.5">${s.pe_pct}</div>
+              </a>
+              <a href="${s.sa_url}" target="_blank" title="PEG (<1代表极具成长性价比)" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">PEG</div>
+                <div class="font-bold text-xs mt-0.5">${s.peg}</div>
+              </a>
+              <a href="${s.sa_url}" target="_blank" title="过去12个月真实股息率" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">股息率</div>
+                <div class="font-bold text-xs text-emerald-600 dark:text-emerald-400 mt-0.5">${s.div}</div>
+              </a>
+              <a href="${s.sa_url}" target="_blank" title="5年分红复合年均增长率 (5Y Div CAGR)" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">分红增长(5Y)</div>
+                <div class="font-bold text-xs text-emerald-600 dark:text-emerald-400 mt-0.5">${s.div_cagr}</div>
+              </a>
+              <a href="${s.sa_url}" target="_blank" title="派息率 (Payout Ratio, <75%更安全)" class="p-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:border-blue-500">
+                <div class="text-[10px] text-slate-400">Payout派息率</div>
+                <div class="font-bold text-xs mt-0.5">${s.payout}</div>
+              </a>
+            </div>
+
+            <!-- 商业模式、业绩质量与低估拆解 -->
+            <div class="space-y-2.5 pt-3 text-xs leading-relaxed">
+              <p class="text-slate-700 dark:text-slate-300">🏰 <strong>${currentLang === 'zh' ? s.moat_zh : s.moat_en}</strong></p>
+              <p class="text-slate-700 dark:text-slate-300">💎 <strong>${currentLang === 'zh' ? s.quality_zh : s.quality_en}</strong></p>
+              <p class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-900 dark:text-emerald-300 border border-emerald-500/20 font-medium">
+                🎯 ${currentLang === 'zh' ? s.underval_zh : s.underval_en}
+              </p>
             </div>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700 pt-2">
-            💡 ${currentLang === 'zh' ? s.note_zh : s.note_en}
-          </p>
         </div>
       `).join('');
     }
@@ -402,11 +459,9 @@
       const t = i18n[currentLang];
       document.querySelectorAll('.cal-btn').forEach(btn => {
         const c = btn.getAttribute('data-cal');
-        if (c === currentCalFilter) {
-          btn.className = 'cal-btn px-3 py-1.5 rounded-lg font-semibold bg-blue-600 text-white border border-blue-600';
-        } else {
-          btn.className = 'cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800';
-        }
+        btn.className = c === currentCalFilter
+          ? 'cal-btn px-3 py-1.5 rounded-lg font-semibold bg-blue-600 text-white border border-blue-600'
+          : 'cal-btn px-3 py-1.5 rounded-lg font-medium border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800';
       });
 
       const items = appData.calendar.filter(i => currentCalFilter === 'ALL' || i.market === currentCalFilter);
@@ -417,9 +472,14 @@
             <span class="text-xs font-bold px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">${item.market}</span>
             <span class="font-medium">${currentLang === 'zh' ? item.title_zh : item.title_en}</span>
           </div>
-          <span class="text-xs px-2.5 py-1 rounded-full ${item.type === 'macro' ? 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300' : 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'}">
-            ${item.type === 'macro' ? t.typeMacro : t.typeEarnings}
-          </span>
+          <div class="flex items-center gap-2">
+            <span class="text-xs px-2.5 py-1 rounded-full ${item.type === 'macro' ? 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300' : 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'}">
+              ${item.type === 'macro' ? t.typeMacro : t.typeEarnings}
+            </span>
+            <a href="${item.source_url}" target="_blank" rel="noopener" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 hover:underline">
+              🔗 ${item.source_name} ↗
+            </a>
+          </div>
         </div>
       `).join('');
     }
