@@ -1,0 +1,128 @@
+{
+  "last_updated": "2026-10-24 17:00 EST",
+  "global_tickers": [
+    { "id": "us10y", "name_zh": "10Y 美债收益率", "name_en": "US 10Y Yield", "value": "4.18%", "change": "+0.04%", "status": "neutral" },
+    { "id": "spread", "name_zh": "10Y-2Y 美债利差", "name_en": "10Y-2Y Spread", "value": "+0.22%", "change": "+0.02%", "status": "good" },
+    { "id": "vix", "name_zh": "VIX 恐慌指数", "name_en": "VIX Index", "value": "16.4", "change": "-1.2%", "status": "good" },
+    { "id": "cadusd", "name_zh": "加元/美元", "name_en": "CAD/USD", "value": "0.724", "change": "-0.15%", "status": "neutral" },
+    { "id": "usdcnh", "name_zh": "美元/离岸人民币", "name_en": "USD/CNH", "value": "7.125", "change": "+0.08%", "status": "neutral" }
+  ],
+  "ai_deductions": [
+    {
+      "id": "deduction_1",
+      "tag_zh": "全球流动性与利率定价",
+      "tag_en": "Global Liquidity & Rates",
+      "event_zh": "美债10年期收益率维持在4.15%上方，同时WTI原油价格回落至70美元区间。",
+      "event_en": "US 10Y Treasury yield holds above 4.15% while WTI Crude pulls back to the $70 range.",
+      "logic_zh": "油价温和压制二次通胀预期 → 美联储与加拿大央行维持渐进降息路径 → 长端无风险利率缺乏大幅上行动力，高股息与价值板块折现率压力缓解。",
+      "logic_en": "Soft oil prices cap re-inflation fears → Fed & BoC stay on gradual rate-cut path → Long-end yields lack upward momentum, easing discount rate pressure on dividend & value assets.",
+      "outcome_zh": "大概率利好：美加高股息ETF（SCHD/VDY.TO）与短久期美债；高估值纯成长科技股维持震荡。",
+      "outcome_en": "Likely Beneficiary: US/CA High-Dividend ETFs (SCHD/VDY.TO) & short-duration bonds; high-multiple tech remains range-bound.",
+      "raw_data_zh": "底层指标：US 10Y = 4.18% | US 2Y = 3.96% | WTI = $70.4 | 金油比 = 38.6（高于30历史均值，提示避险需求仍在）。",
+      "raw_data_en": "Underlying Metrics: US 10Y = 4.18% | US 2Y = 3.96% | WTI = $70.4 | Gold/Oil Ratio = 38.6 (Above 30 historical avg, signaling persistent hedging demand)."
+    },
+    {
+      "id": "deduction_2",
+      "tag_zh": "中国资产与港股离岸流动性",
+      "tag_en": "China Assets & HK Offshore Liquidity",
+      "event_zh": "沪深300风险溢价（ERP）处于历史80%以上高分位，南向资金连续净流入港股高息央企。",
+      "event_en": "CSI 300 Equity Risk Premium (ERP) sits above the 80th historical percentile, with steady Southbound inflows into HK high-yield SOEs.",
+      "logic_zh": "国内10年期国债收益率处于低位（约2.1%）→ 股息率超5%的红利资产对长线险资构成显著吸引力 → 底部安全边际极高。",
+      "logic_en": "China 10Y bond yield remains low (~2.1%) → Dividend assets yielding >5% offer compelling spread for long-term institutional capital → Strong downside floor.",
+      "outcome_zh": "大概率走势：A股红利低波ETF与港股高息电讯/能源股具备强防御性，适合逢低定投累积份额。",
+      "outcome_en": "Likely Trend: A-Share Low-Vol Dividend ETFs and HK high-yield telecom/energy stocks provide strong defense; ideal for dip accumulation.",
+      "raw_data_zh": "底层指标：沪深300 PE = 12.1x | 10年中债 = 2.12% | 隐含ERP = 6.14% | 恒生AH溢价指数 = 142.5。",
+      "raw_data_en": "Underlying Metrics: CSI 300 PE = 12.1x | CN 10Y Yield = 2.12% | Implied ERP = 6.14% | Hang Seng AH Premium = 142.5."
+    }
+  ],
+  "liquidity_bar": [
+    { "market": "US", "name_zh": "🇺🇸 美国市场", "name_en": "🇺🇸 US Market", "score": 55, "state_zh": "中性偏紧", "state_en": "Neutral-Tight", "erp_zh": "ERP: 偏低 (标普高估)", "erp_en": "ERP: Low (S&P Rich)", "color": "amber" },
+    { "market": "CA", "name_zh": "🇨🇦 加拿大市场", "name_en": "🇨🇦 Canada Market", "score": 72, "state_zh": "温和宽松 (降息周期)", "state_en": "Accommodative (Cutting)", "erp_zh": "ERP: 合理偏高", "erp_en": "ERP: Fair-Attractive", "color": "emerald" },
+    { "market": "CN", "name_zh": "🇨🇳 A股市场", "name_en": "🇨🇳 A-Share Market", "score": 78, "state_zh": "政策宽松", "state_en": "Policy Easing", "erp_zh": "ERP: 极高安全边际 ⭐", "erp_en": "ERP: Deep Value ⭐", "color": "emerald" },
+    { "market": "HK", "name_zh": "🇭🇰 港股市场", "name_en": "🇭🇰 HK Market", "score": 65, "state_zh": "南向流入 / 外资观望", "state_en": "Southbound Inflow", "erp_zh": "ERP: 历史极值洼地 ⭐", "erp_en": "ERP: Extreme Value ⭐", "color": "blue" }
+  ],
+  "macro_assets": {
+    "bonds": {
+      "title_zh": "🛡️ 债券与利率锚 (Bonds)",
+      "title_en": "🛡️ Bonds & Rate Anchors",
+      "metrics": [
+        { "label_zh": "美债 10Y / 2Y", "label_en": "US 10Y / 2Y", "val": "4.18% / 3.96%" },
+        { "label_zh": "中债 10Y 收益率", "label_en": "CN 10Y Yield", "val": "2.12%" },
+        { "label_zh": "TLT (20年+长债ETF)", "label_en": "TLT (20Y+ Treasury)", "val": "$92.4 (Yield 4.4%)" },
+        { "label_zh": "SGOV (0-3月短债ETF)", "label_en": "SGOV (0-3M T-Bill)", "val": "$100.5 (Yield 4.8%)" }
+      ]
+    },
+    "oil": {
+      "title_zh": "🛢️ 原油与能源锚 (Crude Oil)",
+      "title_en": "🛢️ Crude Oil & Energy",
+      "metrics": [
+        { "label_zh": "WTI 原油主力", "label_en": "WTI Crude", "val": "$70.45 / bbl" },
+        { "label_zh": "Brent 布伦特原油", "label_en": "Brent Crude", "val": "$74.20 / bbl" },
+        { "label_zh": "XLE (美股能源ETF)", "label_en": "XLE (US Energy ETF)", "val": "$89.6 (PE 13.2x)" },
+        { "label_zh": "XEG.TO (加股能源ETF)", "label_en": "XEG.TO (CA Energy)", "val": "C$17.8 (Div 3.8%)" }
+      ]
+    },
+    "gold": {
+      "title_zh": "🪙 黄金与避险比价 (Gold)",
+      "title_en": "🪙 Gold & Safe-Haven Ratios",
+      "metrics": [
+        { "label_zh": "COMEX 黄金", "label_en": "COMEX Gold", "val": "$2,720 / oz" },
+        { "label_zh": "金油比 (危机预警指标)", "label_en": "Gold/Oil Ratio", "val": "38.6x (偏高预警)" },
+        { "label_zh": "GLD (黄金ETF)", "label_en": "GLD (Gold ETF)", "val": "$251.2" },
+        { "label_zh": "美国10Y实际利率(TIPS)", "label_en": "US 10Y Real Yield", "val": "1.88%" }
+      ]
+    }
+  },
+  "markets": {
+    "CA": {
+      "etfs": [
+        { "code": "XIU.TO", "name_zh": "TSX 60 核心宽基 ETF", "name_en": "iShares S&P/TSX 60 ETF", "price": "C$36.4", "pe": "15.8x", "percentile": "45%", "div": "3.1%", "action_zh": "持有 / 正常定投", "action_en": "Hold / Regular DCA" },
+        { "code": "VDY.TO", "name_zh": "加拿大高股息 ETF", "name_en": "Vanguard FTSE CDN High Div", "price": "C$47.2", "pe": "13.4x", "percentile": "32%", "div": "4.5%", "action_zh": "低估吸筹", "action_en": "Accumulate" }
+      ],
+      "screener": [
+        { "code": "ENB.TO", "name_zh": "安桥能源基建", "name_en": "Enbridge Inc.", "price": "C$56.2", "pe": "18.5x", "pb": "2.1x", "div": "6.5%", "note_zh": "现金流稳定，降息周期核心受益", "note_en": "Stable FCF, core rate-cut beneficiary" },
+        { "code": "TD.TO", "name_zh": "道明银行", "name_en": "Toronto-Dominion Bank", "price": "C$78.5", "pe": "10.2x", "pb": "1.3x", "div": "5.2%", "note_zh": "受利空错杀，股息率处10年高位", "note_en": "Oversold on headlines, 10Y high yield" },
+        { "code": "CNQ.TO", "name_zh": "加拿大自然资源", "name_en": "Canadian Natural Resources", "price": "C$46.8", "pe": "12.6x", "pb": "2.4x", "div": "4.4%", "note_zh": "极低盈亏平衡油价，100%自由现金流回馈", "note_en": "Low breakeven oil price, strong FCF return" }
+      ]
+    },
+    "US": {
+      "etfs": [
+        { "code": "VOO", "name_zh": "标普 500 ETF", "name_en": "Vanguard S&P 500 ETF", "price": "$534.0", "pe": "26.8x", "percentile": "88%", "div": "1.2%", "action_zh": "估值偏高 / 仅底仓持有", "action_en": "Rich Valuation / Hold Core" },
+        { "code": "SCHD", "name_zh": "嘉信美国高股息红利 ETF", "name_en": "Schwab US Dividend Equity ETF", "price": "$28.9", "pe": "16.2x", "percentile": "42%", "div": "3.5%", "action_zh": "安全边际高 / 定投首选", "action_en": "High Margin of Safety / DCA" }
+      ],
+      "screener": [
+        { "code": "PFE", "name_zh": "辉瑞制药", "name_en": "Pfizer Inc.", "price": "$28.8", "pe": "11.4x", "pb": "1.8x", "div": "5.8%", "note_zh": "专利悬崖悲观预期充分计价，高股息托底", "note_en": "Patent cliff priced in, high dividend floor" },
+        { "code": "VZ", "name_zh": "威瑞森电信", "name_en": "Verizon Communications", "price": "$43.1", "pe": "9.5x", "pb": "1.9x", "div": "6.2%", "note_zh": "自由现金流强劲，防御属性突出", "note_en": "Strong FCF yield, defensive telecom anchor" }
+      ]
+    },
+    "CN": {
+      "etfs": [
+        { "code": "510300.SS", "name_zh": "沪深 300 ETF", "name_en": "CSI 300 Index ETF", "price": "¥4.02", "pe": "12.1x", "percentile": "25%", "div": "3.0%", "action_zh": "高股债性价比 / 分批配置", "action_en": "High ERP / Accumulate" },
+        { "code": "512890.SS", "name_zh": "红利低波 ETF", "name_en": "CSI Low-Vol Dividend ETF", "price": "¥1.12", "pe": "7.2x", "percentile": "18%", "div": "5.4%", "action_zh": "核心底仓 / 强力定投", "action_en": "Core Value / Strong Buy" }
+      ],
+      "screener": [
+        { "code": "600900.SS", "name_zh": "长江电力", "name_en": "China Yangtze Power", "price": "¥28.4", "pe": "19.2x", "pb": "3.1x", "div": "3.6%", "note_zh": "类债水电印钞机，中债收益率下行受益", "note_en": "Bond-proxy hydro monopoly, benefits from lower CN yields" },
+        { "code": "601088.SS", "name_zh": "中国神华", "name_en": "China Shenhua Energy", "price": "¥40.5", "pe": "11.8x", "pb": "1.9x", "div": "6.0%", "note_zh": "长协煤价护城河，高分红比例承诺", "note_en": "Contract coal moat, high dividend payout commitment" }
+      ]
+    },
+    "HK": {
+      "etfs": [
+        { "code": "2800.HK", "name_zh": "盈富基金 (恒生指数)", "name_en": "Tracker Fund of HK", "price": "HK$21.1", "pe": "9.6x", "percentile": "19%", "div": "4.1%", "action_zh": "历史低位区间 / 定投持有", "action_en": "Historical Low Zone / DCA" },
+        { "code": "3110.HK", "name_zh": "GX 恒生高股息率 ETF", "name_en": "Global X Hang Seng High Div", "price": "HK$24.8", "pe": "6.4x", "percentile": "15%", "div": "6.8%", "action_zh": "深度价值洼地 ⭐", "action_en": "Deep Value Pocket ⭐" }
+      ],
+      "screener": [
+        { "code": "0941.HK", "name_zh": "中国移动 (港股)", "name_en": "China Mobile HK", "price": "HK$73.5", "pe": "10.5x", "pb": "1.1x", "div": "6.8%", "note_zh": "相比A股折价超30%，净现金充沛", "note_en": ">30% discount to A-share, massive net cash" },
+        { "code": "0883.HK", "name_zh": "中国海洋石油", "name_en": "CNOOC Ltd.", "price": "HK$19.2", "pe": "6.8x", "pb": "1.2x", "div": "7.1%", "note_zh": "桶油成本低于30美元，极强安全边际", "note_en": "All-in cost <$30/bbl, extreme margin of safety" }
+      ]
+    }
+  },
+  "calendar": [
+    { "date": "2026-10-28", "market": "CA", "type": "macro", "title_zh": "加拿大央行 (BoC) 货币政策报告与讲话", "title_en": "Bank of Canada Monetary Policy Report" },
+    { "date": "2026-10-30", "market": "US", "type": "macro", "title_zh": "美国三季度 GDP 初值 & 核心 PCE 物价指数", "title_en": "US Q3 GDP Advance & Core PCE Price Index" },
+    { "date": "2026-10-31", "market": "CN", "type": "macro", "title_zh": "中国 10 月官方制造业 PMI 公布", "title_en": "China Official Manufacturing PMI (Oct)" },
+    { "date": "2026-11-01", "market": "US", "type": "macro", "title_zh": "美国 10 月非农就业报告 (NFP)", "title_en": "US Non-Farm Payrolls (NFP)" },
+    { "date": "2026-11-05", "market": "CA", "type": "earnings", "title_zh": "Enbridge (ENB.TO) 财报发布与分红宣告", "title_en": "Enbridge (ENB.TO) Q3 Earnings Release" },
+    { "date": "2026-11-07", "market": "US", "type": "macro", "title_zh": "美联储 FOMC 利率决议公布", "title_en": "Federal Reserve FOMC Interest Rate Decision" },
+    { "date": "2026-11-12", "market": "HK", "type": "earnings", "title_zh": "腾讯控股 (0700.HK) 三季度业绩公布", "title_en": "Tencent (0700.HK) Q3 Earnings Release" }
+  ]
+}
