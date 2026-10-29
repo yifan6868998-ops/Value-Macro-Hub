@@ -2,10 +2,9 @@ name: Daily Macro & Value Data Update
 
 on:
   schedule:
-    # 每天美东时间傍晚与早晨各自动更新一次
     - cron: '30 21 * * 1-5'
     - cron: '30 12 * * 1-5'
-  workflow_dispatch: # 允许你在网页上随时手动点击立即更新
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance pandas
+        run: pip install yfinance pandas akshare
 
       - name: Fetch latest market & macro data
         env:
